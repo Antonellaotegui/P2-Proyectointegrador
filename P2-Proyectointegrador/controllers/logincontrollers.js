@@ -1,4 +1,5 @@
-const mercados = require ("../db/index")
+const { lista } = require("../db/index")
+
 listaBandas = bandas.lista
 const controlador = {
     index: function (req,res){
