@@ -1,5 +1,10 @@
 const controlador = require("../controllers/bandasControllers")
-
+propiedades = {
+  usuario: [{
+    nombre: "",
+    DNI: "",
+}]
+}
 productos = {
     lista: [
       {
