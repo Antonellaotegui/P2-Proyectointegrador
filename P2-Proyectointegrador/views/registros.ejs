@@ -14,7 +14,14 @@
         Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
         ////////////////
         </h2>
-        <form action="./product.html"method="GET" type="email"><label>usuario</label></form>
+        <form action="./product.html"method="GET" >
+            <input type="email" name="mail" value="" placeholder="email:">
+            <input type="text" name="usuario" value="" placeholder="usuario:">
+            <input type="password" name="contraseña" value="" placeholder="contraseña:">
+            <input type="date" name="fecha" value="" placeholder="fecha:">
+            <input type="number" name="documento" value="" placeholder="documento:">
+            <input type="text" name="fotodeperfil" value="" placeholder="foto de perfil: ">
+        </form>
 
 
 <%-include("./partials/footer.ejs") %>
