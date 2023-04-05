@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const controlador = require("../controllers/bandasControllers")
 usuario={
   objetoliteral: {
@@ -29,37 +28,37 @@ productos = {
         descripcion: "Minimizá el riesgo de lesiones con el Protector bucal Gilbert Viper Pro 3. Su simplicidad en el diseño permite una perfecta adaptación a cada tipo de dentadura, impidiendo los golpes y reduciendo las vibraciones para mayor cuidado en el campo de juego.",
         fecha_de_carga: "24/4/2020",
       },{
-        imagen: "https://images.app.goo.gl/qYcZKeepZAjUi5Vf6",
+        imagen: "images/products/funda.webp",
         nombre: "Funda TK",
         descripcion: "La imbatible TK 3.3 ofrece una solución efectiva en todos los entornos, con un compartimiento para palo, 2 compartimientos frontales separados, y una única tira trasera.",
         fecha_de_carga: "3/6/2021",
       },{
-        imagen: "https://images.app.goo.gl/EE2vCZ6ZkinK9TD48",
+        imagen: "images/products/cubrecanilleras.jpeg",
         nombre: "Cubre canilleras",
         descripcion: "Protegen la piel del roce generado por la canillera durante el entrenamineto y partido. Ofrecen una buena elasticidad y una leve compresion.",
         fecha_de_carga: "17/1/2023",
       },{
-        imagen: "https://images.app.goo.gl/uCSEi63t5CoMJYPt7",
+        imagen: "images/products/tartaneras.jpg",
         nombre: "Tartaneras Adidas",
         descripcion: "Es un botín clásico, tradicional en su perfil de cosmética, ampliamente testeado en calidad y duración. Está realizado en materiales sintéticos sin costuras y con detalles de alta frecuencia, lo que hace liviano y cómodo.",
         fecha_de_carga: "5/5/2019",
       },{
-        imagen: "https://images.app.goo.gl/1rnW7TmppctqLWWEA",
+        imagen: "images/products/bocha.png",
         nombre: "Bocha de hockey Drial",
         descripcion: "Bochas profesionales, estructura confeccionada en una sola pieza hueca, 0% absorción de agua y humedad.",
         fecha_de_carga: "",
       },{
-        imagen: "https://images.app.goo.gl/QEfVpPdxynEC1jb29",
+        imagen: "images/products/guanteVlack.jpg",
         nombre: "Guante Vlack",
         descripcion: "De la línea de guantes Brabo, el F5 es un guante confeccionado en tela y con protecciones de plástico moldeado. Es abierto, lo cual brinda mucha comodidad al jugador para que pueda seguir sintiendo el mango del palo con la palma de la mano.",
         fecha_de_carga: "12/2/2022",
       },{
-        imagen: "https://images.app.goo.gl/s6x1TT8C8N5ry8kn9",
+        imagen: "images/products/arquero.webp",
         nombre: "Guante Drial de arqueros",
         descripcion: "Fabricado con goma spum de alta densidad, con terminaciones de calidad. Todos nuestros productos poseen 90 días de garantía por defectos de fabricación, desde la fecha de compra.",
         fecha_de_carga: "13/8/2018",
       },{
-        imagen: "https://images.app.goo.gl/99EyfHL51FrcmZ7x5",
+        imagen: "images/products/paloballyng.webp",
         nombre: "Palo Balling",
         descripcion: "El nuevo Alpha 100 Xtreme Groove Lowbow fue diseñado para arrastradores en busca de sumar potencia a sus tiros y progresar en sus habilidades aereas. ",
         fecha_de_carga: "31/12/2017",
@@ -90,8 +89,8 @@ productos = {
   }
 
   module.exports = objliteral
-=======
-objliteral={
+
+  objliteral={
   usuario:{
       nombredesuario: "Antonella Otegui",
       DNI: "45678912",
@@ -171,9 +170,4 @@ objliteral={
     }
   
     module.exports = bandas
-<<<<<<< HEAD
-}
->>>>>>> 9a79315eb6028e27a248d4e994412a849dbdfa38
-=======
 
->>>>>>> 3cffcbc6a6543b2901e509e43a1b6c960bd7bd8a
