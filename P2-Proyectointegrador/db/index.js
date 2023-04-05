@@ -1,6 +1,6 @@
 objliteral={
-  usuario={
-      Usuario: "Antonella Otegui",
+  usuario:{
+      nombredesuario: "Antonella Otegui",
       DNI: "45678912",
       Email: "antonellaotegui@icloud.com",
       Contraseña: "12345678",
@@ -9,7 +9,7 @@ objliteral={
   
   },
   
-  productos = {
+  productos : {
       lista: [
         {
             imagen: "https://images.app.goo.gl/Y8xrePBQfTEtNw5fA",
@@ -65,7 +65,7 @@ objliteral={
       ]
     },
   
-    comentarios=[
+    comentarios:[
         {
           usuario:"Antonella Otegui",
           comentario:"comentario",
@@ -78,4 +78,4 @@ objliteral={
     }
   
     module.exports = bandas
-}
+
