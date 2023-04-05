@@ -1,10 +1,15 @@
 const controlador = require("../controllers/bandasControllers")
-propiedades = {
-  usuario: [{
-    nombre: "",
-    DNI: "",
-}]
-}
+usuario={
+  objetoliteral: {
+    Usuario: "Antonella Otegui",
+    DNI: "45678912",
+    Email: "antonellaotegui@icloud.com",
+    Contraseña: "12345678",
+    Fecha:"22/02/2004",
+    Fotodeperfil:"",
+
+}}
+
 productos = {
     lista: [
       {
@@ -60,6 +65,16 @@ productos = {
       }
     ]
   }
-  
+
+  comentarios={
+    listac:[
+      {
+        usuario:"Antonella Otegui",
+        comentario:"comentario",
+        imagendeperfil:"poner imagen de maqueta"
+      }
+    ]
+
+  }
 
   module.exports = bandas
