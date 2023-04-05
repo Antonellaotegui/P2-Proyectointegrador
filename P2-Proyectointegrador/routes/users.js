@@ -6,5 +6,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 router.get("/registro", userscontrollers.register)
-router.get("/login", userscontrollers.register)
+router.get("/login", userscontrollers.login)
+router.get ("/profile", userscontrollers.profile)
 module.exports = router;
+
