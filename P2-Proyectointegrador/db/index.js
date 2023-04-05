@@ -92,8 +92,8 @@ productos = {
   module.exports = objliteral
 =======
 objliteral={
-  usuario={
-      Usuario: "Antonella Otegui",
+  usuario:{
+      nombredesuario: "Antonella Otegui",
       DNI: "45678912",
       Email: "antonellaotegui@icloud.com",
       Contraseña: "12345678",
@@ -102,7 +102,7 @@ objliteral={
   
   },
   
-  productos = {
+  productos : {
       lista: [
         {
             imagen: "https://images.app.goo.gl/Y8xrePBQfTEtNw5fA",
@@ -158,7 +158,7 @@ objliteral={
       ]
     },
   
-    comentarios=[
+    comentarios:[
         {
           usuario:"Antonella Otegui",
           comentario:"comentario",
@@ -171,5 +171,9 @@ objliteral={
     }
   
     module.exports = bandas
+<<<<<<< HEAD
 }
 >>>>>>> 9a79315eb6028e27a248d4e994412a849dbdfa38
+=======
+
+>>>>>>> 3cffcbc6a6543b2901e509e43a1b6c960bd7bd8a
