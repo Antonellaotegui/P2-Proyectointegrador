@@ -5,7 +5,11 @@ const LoginController = {
     },
     register: function (req, res) {
         return res.render('register')
+    },
+    ProfileEdit: function (req,res){
+        res.render("profileEdit")
     }
+    
 }
 
 

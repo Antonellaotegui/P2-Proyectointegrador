@@ -8,5 +8,7 @@ router.get('/', function(req, res, next) {
 router.get("/registro", userscontrollers.register)
 router.get("/login", userscontrollers.login)
 router.get ("/profile", userscontrollers.profile)
+router.get ("/profile-edit", userscontrollers.profileEdit)
+
 module.exports = router;
 

@@ -13,17 +13,17 @@ usuario={
 productos = {
     lista: [
       {
-          imagen: "https://images.app.goo.gl/Y8xrePBQfTEtNw5fA",
+          imagen: "images/products/palograys.jpeg",
           nombre: "Palo de Hockey Grays",
           descripcion: "El Grays Blast Ultrabow Pink / Teal es el palo de inicio perfecto para los niños y cualquiera que esté comenzando su carrera en el hockey. El palo de hockey Blast tiene un mango de gamuza de color que hace que usar el palo sea una experiencia cómoda.",
           fecha_de_carga: "16/7/2022",
       },{
-        imagen: "https://images.app.goo.gl/yH5Rpq6mcFnxjfbc8",
+        imagen: "images/products/canilleras.png",
         nombre: "Canilleras Malik",
         descripcion: "Conocé las Canilleras Malik Club 8 Protección, ideales para cuidarte en cada enfrentamiento con el oponente. Diseñadas en una estructura curva y anatómica que se adapta a las piernas perfecta y cómodamente, tienen un ajuste de correas para facilitar el poner y sacar",
         fecha_de_carga: "22/2/2016",
       },{
-        imagen: "https://images.app.goo.gl/B9E2RpWJVfiQuAUh6",
+        imagen: "images/products/palograys.jpeg",
         nombre: "Protector bucal Gilbert",
         descripcion: "Minimizá el riesgo de lesiones con el Protector bucal Gilbert Viper Pro 3. Su simplicidad en el diseño permite una perfecta adaptación a cada tipo de dentadura, impidiendo los golpes y reduciendo las vibraciones para mayor cuidado en el campo de juego.",
         fecha_de_carga: "24/4/2020",
@@ -70,11 +70,22 @@ productos = {
     listac:[
       {
         usuario:"Antonella Otegui",
-        comentario:"comentario",
+        comentario:"El envio es una buena opcion si no podes ir a buscarlo, llego en tiempo y forma el producto",
+        imagendeperfil:"poner imagen de maqueta"
+      },
+      
+      {
+        usuario:"Pilar Rolon",
+        comentario:"Calidad y precio excelentes",
+        imagendeperfil:"poner imagen de maqueta"
+      },
+      {
+        usuario:"Clara Pellet",
+        comentario:"",
         imagendeperfil:"poner imagen de maqueta"
       }
     ]
 
   }
 
-  module.exports = bandas
+  module.exports = objliteral
