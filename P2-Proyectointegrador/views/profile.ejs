@@ -9,13 +9,8 @@
         </div>
         <div class="data-container col-6">
             <div class="d-flex align-items-center ">
-<<<<<<< HEAD
-                <h1 class="main-title">Nombre del usuario 
-                    <a href="/P2-Proyectointegrador/profile-edit.ejs"> 
-=======
                 <h1 class="main-title"> <%= usersdata.nombredesuario %>
-                    <a href="profile-edit.html">
->>>>>>> 3cffcbc6a6543b2901e509e43a1b6c960bd7bd8a
+                    <a href="/users/profile-edit">
                         <i class="fas fa-cog"></i>
                     </a>
                 </h1>
@@ -40,36 +35,23 @@
             <h2 class="products-title">Mis productos</h2>
         </div>
         <!-- Show mis productos -->
+        <% for(let i=0; i<0; i++){ %>
         <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
-                <a href="product.html">
+                <a href="/products">
                     <figure class="product-box_image">
-                        <img src="images/products/default-image.png" alt="cafetera moulinex">
+                        <img src="<%= productoslista[i].imagen %>" alt="image" <%= productoslista[i].nombre %>>
                     </figure>
                     <article class="product-box_data">
-                        <h2>Nombre del producto</h2>
-                        <p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-                        <p>Comentarios: 12</p>
+                        <h2><%= productoslista.nombre[i] %></h2>
+                        <p><%= productoslista[i].descripcion %></p>
+                        <p>Comentarios: <%= comentarioslista.length %></p>
                     </article>
                 </a>
             </section>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-            <section class="product-box">
-                <a href="product.html">
-                    <figure class="product-box_image">
-                        <img src="images/products/default-image.png" alt="cafetera moulinex">
-                    </figure>
-                    <article class="product-box_data">
-                        <h2>Nombre del producto</h2>
-                        <p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-                            delectus ex</p>
-                        <p>Comentarios: 12</p>
-                    </article>
-                </a>
-            </section>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
+        <% } %>
+        <!-- <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
                 <a href="product.html">
                     <figure class="product-box_image">
@@ -159,6 +141,21 @@
                 </a>
             </section>
         </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+                <a href="product.html">
+                    <figure class="product-box_image">
+                        <img src="images/products/default-image.png" alt="cafetera moulinex">
+                    </figure>
+                    <article class="product-box_data">
+                        <h2>Nombre del producto</h2>
+                        <p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+                            delectus ex</p>
+                        <p>Comentarios: 12</p>
+                    </article>
+                </a>
+            </section>
+        </div> -->
     </div>
 </div>
 <!-- /Mis productos -->

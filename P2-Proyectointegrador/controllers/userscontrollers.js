@@ -9,20 +9,18 @@ const LoginController = {
     register: function (req, res) {
         return res.render('register')
     },
-<<<<<<< HEAD
     ProfileEdit: function (req,res){
         res.render("profileEdit")
-    }
+    },
     
-=======
     profile: function (req, res){
         return res.render('profile',{
             usersdata: usuarioslista,
-            dataproductos: productoslista
+            dataproductos: productoslista,
+            datacomentarios: comentarioslista
         })
     }
 
->>>>>>> 3cffcbc6a6543b2901e509e43a1b6c960bd7bd8a
 }
 
 

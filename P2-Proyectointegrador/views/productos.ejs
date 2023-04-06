@@ -4,35 +4,31 @@
 <!-- product detail -->
 <div class="container products-wrapper">
     <div class="d-flex align-items-center">
-        <h2 class="products-title">Nombre del producto</h2> 
+        <h2 class="products-title"> <%= productoslista.nombre %></h2> 
         <p class="product-detail-description">
-<<<<<<< HEAD
-            <a href="/P2-Proyectointegrador/product-add.ejs">Editar</a>
-=======
-            <a href="/products/productadd">Editar</a>
->>>>>>> 9a79315eb6028e27a248d4e994412a849dbdfa38
+            <a href="/products">Editar</a>
         </p>
     </div>
     <div class="product-detail">
         <div class="row">
             <article class="col-12 col-lg-8 product-detail-info">
-                <img src="./images/products/default-image.png" alt="" class="product-detail-img">
+                <img src="<%= productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
                 <p class="product-detail-description">
-                    Descripción corta del producto. En la página principal solo se ven 2 líneas de estar descripción.Lorem ipsum dolor,
-                    sit amet consectetur adipisicing elit. Tae ipsam amet eum, totam dolore libero illo unde? Consectetur dolorem neque
-                    veritatis.</p>
+                    <p><%= productoslista[i].descripcion %></p></p>
             </article>
+            <% for(let i=0; i<0; i++){ %>
             <div class="col-12 col-lg-4">
                 <section class="comments">
                     <article>
-                        <img src="https://via.placeholder.com/35" alt="">
+                        <img src="<%= comentarioslista.imagendeperfil %>" alt="">
                         <div class="data">
                             <p class="user">
-                            <strong> <a href="profile.html">Nombre usuario: </a> </strong>
-                             Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore magnam, praesentium explicabo inventore molestias facilis labore. Fugit ipsa mollitia odit inventore consequuntur.</p>
+                            <strong> <a href="profile.html">Nombre usuario:<%= comentarioslista.usuario %> </a> </strong>
+                            <%= comentarioslista.comentario %></p>
                         </div>
                     </article>
-                    <article>
+                    <% } %>
+                    <!-- <article>
                         <img src="https://via.placeholder.com/35" alt="">
                         <div class="data">
                             <p class="user">
@@ -65,7 +61,7 @@
                                 Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore</p>
                         </div>
-                    </article>
+                    </article> -->
 
                 </section>
                 <form class="form" action="" method="POST">
