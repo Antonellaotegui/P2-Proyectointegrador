@@ -1,4 +1,4 @@
-const controlador = require("../controllers/bandasControllers")
+
   objliteral={
   usuario:{
       nombredesuario: "Antonella Otegui",
