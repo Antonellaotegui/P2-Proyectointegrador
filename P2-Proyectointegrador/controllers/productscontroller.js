@@ -5,14 +5,14 @@ let comentarioslista= objliteral.comentarios
 const productoscontroller={
     products: function (req, res) {
         return res.render('productos', {
-            dataproductos: productoslista,
+            productoslista: productoslista,
             userlogueado:false
         })
     },
     productsadd: function (req, res) {
         return res.render('product-add',{
-            dataproductos: productoslista,
-            userlogueado:false
+            productoslista: productoslista,
+            userlogueado:true
         })
     },
     detalle: function (req, res) {
@@ -22,6 +22,7 @@ const productoscontroller={
                 if (productoslista[i].id == indice){
                     res.render("productos",{
                         detalleProducto: productoslista[i],
+                        comentarioslista: comentarioslista[i],
                         userlogueado:false
                     })
                     }

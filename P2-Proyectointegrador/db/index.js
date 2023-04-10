@@ -30,7 +30,7 @@ let objliteral={
           fecha_de_carga: "24/4/2020",
         },{
           id: "4",
-          imagen: "/images/products/funda",
+          imagen: "/images/products/funda.webp",
           nombre: "Funda TK",
           descripcion: "La imbatible TK 3.3 ofrece una solución efectiva en todos los entornos, con un compartimiento para palo, 2 compartimientos frontales separados, y una única tira trasera.",
           fecha_de_carga: "3/6/2021",
