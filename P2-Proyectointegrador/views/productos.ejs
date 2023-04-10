@@ -12,11 +12,11 @@
     <div class="product-detail">
         <div class="row">
             <article class="col-12 col-lg-8 product-detail-info">
-                <img src="<%= productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
+                <img src="<%= detalleProducto.imagen %>" alt="imagen" <%= detalleProducto.nombre %>>
                 <p class="product-detail-description">
-                    <p><%= productoslista[i].descripcion %></p></p>
+                    <p><%= detalleProducto.descripcion %></p></p>
             </article>
-            <% for(let i=0; i<0; i++){ %>
+            <% for(let i=0; i<comentarioslista.length; i++){ %>
             <div class="col-12 col-lg-4">
                 <section class="comments">
                     <article>

@@ -1,13 +1,13 @@
 const objliteral= require("../db/index")
-usuarioslista= objliteral.usuario
-productoslista= objliteral.productos
-comentarioslista= objliteral.comentarios
+let usuarioslista= objliteral.usuario
+let productoslista= objliteral.productos
+let comentarioslista= objliteral.comentarios
 const index={
     index: function (req, res){
     return res.render('index',{
-        usersdata: usuarioslista,
-        dataproductos: productoslista,
-        datacomentarios: comentarioslista,
+        usuarioslista: usuarioslista,
+        productoslista: productoslista,
+        comentarioslista: comentarioslista,
         userlogueado:false
     })
 }

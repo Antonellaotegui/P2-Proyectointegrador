@@ -1,5 +1,4 @@
-
-  objliteral={
+let objliteral={
   usuario:{
       nombredesuario: "Antonella Otegui",
       DNI: "45678912",
@@ -10,19 +9,21 @@
   
   },
   
-  productos : {
-      lista: [
+  productos :[
         {
+            id:"1",
             imagen: "/images/products/palograys.jpeg",
             nombre: "Palo de Hockey Grays",
             descripcion: "El Grays Blast Ultrabow Pink / Teal es el palo de inicio perfecto para los niños y cualquiera que esté comenzando su carrera en el hockey. El palo de hockey Blast tiene un mango de gamuza de color que hace que usar el palo sea una experiencia cómoda.",
             fecha_de_carga: "16/7/2022",
         },{
+          id:"2",
           imagen: "/images/products/canilleras.png",
           nombre: "Canilleras Malik",
           descripcion: "Conocé las Canilleras Malik Club 8 Protección, ideales para cuidarte en cada enfrentamiento con el oponente. Diseñadas en una estructura curva y anatómica que se adapta a las piernas perfecta y cómodamente, tienen un ajuste de correas para facilitar el poner y sacar",
           fecha_de_carga: "22/2/2016",
         },{
+          id:"3",
           imagen: "/images/products/bucal.webp",
           nombre: "Protector bucal Gilbert",
           descripcion: "Minimizá el riesgo de lesiones con el Protector bucal Gilbert Viper Pro 3. Su simplicidad en el diseño permite una perfecta adaptación a cada tipo de dentadura, impidiendo los golpes y reduciendo las vibraciones para mayor cuidado en el campo de juego.",
@@ -63,8 +64,7 @@
           descripcion: "El nuevo Alpha 100 Xtreme Groove Lowbow fue diseñado para arrastradores en busca de sumar potencia a sus tiros y progresar en sus habilidades aereas. ",
           fecha_de_carga: "31/12/2017",
         }
-      ]
-    },
+      ],
   
     comentarios:[
         {

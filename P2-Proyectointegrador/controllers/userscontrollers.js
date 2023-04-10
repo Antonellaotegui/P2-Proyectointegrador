@@ -1,7 +1,7 @@
 const objliteral= require("../db/index")
-usuarioslista= objliteral.usuario
-productoslista= objliteral.productos
-comentarioslista= objliteral.comentarios
+let usuarioslista= objliteral.usuario
+let productoslista= objliteral.productos
+let comentarioslista= objliteral.comentarios
 const LoginController = {
     login: function (req, res) {
         return res.render('login')
@@ -15,9 +15,9 @@ const LoginController = {
     
     profile: function (req, res){
         return res.render('profile',{
-            usersdata: usuarioslista,
-            dataproductos: productoslista,
-            datacomentarios: comentarioslista
+            usuarioslista: usuarioslista,
+            productoslista: productoslista,
+            comentarioslista: comentarioslista
         })
     }
 
