@@ -3,7 +3,7 @@
 
 <!-- Banner -->
 <div class="banner">
-  <img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+  <img src="/images/img-home-banner.jpg" alt="Banner de ofertas">
 </div>
 <!-- /Banner -->
 
@@ -14,15 +14,15 @@
       <h2 class="products-title">Novedades</h2>
     </div>
     <!-- Show the "ultimos" products -->
-    <% for(let i=0; i<0; i++){ %>
+    <% for(let i=0; i< productoslista.length; i++){ %>
     <div class="col-12 col-sm-6 col-lg-3">
       <section class="product-box">
-        <a href="/products/detalle/3">
+        <a href="/products/detalle/id">
           <figure class="product-box_image">
-            <img src="<%= productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
+            <img src="/<%= productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
           </figure>
           <article class="product-box_data">
-            <h2><%= productoslista.nombre[i] %></h2>
+            <h2><%= productoslista[i].nombre %></h2>
             <p><%= productoslista[i].descripcion %></p>
             <p>Comentarios: <%= comentarioslista.length %></p>
           </article>
@@ -85,15 +85,15 @@
       <h2 class="products-title">Más comentados</h2>
     </div>
     <!-- Show the "ultimos" products -->
-    <% for(let i=0; i<0; i++){ %>
+    <% for(let i=0; i< productoslista.length; i++){ %>
     <div class="col-12 col-sm-6 col-lg-3">
       <section class="product-box">
         <a href="/products/detalle/3">
           <figure class="product-box_image">
-            <img src="<%= productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
+            <img src="/<%=productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
           </figure>
           <article class="product-box_data">
-            <h2><%= productoslista.nombre[i] %></h2>
+            <h2><%= productoslista[i].nombre %></h2>
             <p><%= productoslista[i].descripcion %></p>
             <p>Comentarios: <%= comentarioslista.length %></p>
           </article>
