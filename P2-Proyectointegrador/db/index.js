@@ -96,6 +96,26 @@
           usuario:"Sofia Arroyo",
           comentario:"no lo recomiendo tanto",
           imagendeperfil:"images/users/default-images.png"
+        },
+        {
+          usuario:"Santiago Rolon",
+          comentario:"Excelente atencion",
+          imagendeperfil:"images/users/default-images.png"
+        },
+        {
+          usuario:"Cecilia Latorre",
+          comentario:"No me llego el talle que pedi, como puedo cambiarlo?",
+          imagendeperfil:"images/users/default-images.png"
+        },
+        {
+          usuario:"Juan Cruz Benegas",
+          comentario:"van a ingresar palos de otra marca?",
+          imagendeperfil:"images/users/default-images.png"
+        },
+        {
+          usuario:"Maria De la Cruz",
+          comentario:"Me llego antes de lo esperado y con un empaquetado muy seguro. Recomiendo",
+          imagendeperfil:"images/users/default-images.png"
         }
     ]
     }
