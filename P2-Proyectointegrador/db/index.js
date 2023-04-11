@@ -54,7 +54,7 @@ let objliteral={
           fecha_de_carga: "23/02/2021",
         },{
           id: "8",
-          imagen: "guanteVlack.jpg",
+          imagen: "/images/products/guanteVlack.jpg",
           nombre: "Guante Vlack",
           descripcion: "De la línea de guantes Brabo, el F5 es un guante confeccionado en tela y con protecciones de plástico moldeado. Es abierto, lo cual brinda mucha comodidad al jugador para que pueda seguir sintiendo el mango del palo con la palma de la mano.",
           fecha_de_carga: "12/2/2022",
