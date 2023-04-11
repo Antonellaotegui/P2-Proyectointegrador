@@ -77,52 +77,52 @@ let objliteral={
         {
           usuario:"Antonella Otegui",
           comentario:"Muy buen material",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         },
         {
           usuario:"Clara Pellet",
           comentario:"Me duro un solo año",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         },
         {
           usuario:"Pilar Rolon",
           comentario:"Muy lindas",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         },
         {
           usuario:"Lara Grazzini",
           comentario:"muy practico",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         },
         {
           usuario:"Francesca Guadagni",
           comentario:"recomendado",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         },
         {
           usuario:"Sofia Arroyo",
           comentario:"no lo recomiendo tanto",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         },
         {
           usuario:"Santiago Rolon",
           comentario:"Excelente atencion",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         },
         {
           usuario:"Cecilia Latorre",
           comentario:"No me llego el talle que pedi, como puedo cambiarlo?",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         },
         {
           usuario:"Juan Cruz Benegas",
           comentario:"van a ingresar palos de otra marca?",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         },
         {
           usuario:"Maria De la Cruz",
           comentario:"Me llego antes de lo esperado y con un empaquetado muy seguro. Recomiendo",
-          imagendeperfil:"images/users/default-images.png"
+          imagendeperfil:"/images/users/default-images.png"
         }
     ]
     }
