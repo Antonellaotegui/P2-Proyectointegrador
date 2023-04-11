@@ -86,7 +86,7 @@ let objliteral={
         },
         {
           usuario:"Pilar Rolon",
-          comentario:"Muy lindas",
+          comentario:"4",
           imagendeperfil:"images/users/default-images.png"
         },
         {
