@@ -5,11 +5,11 @@
 <section class="info-usuario container products-wrapper">
     <div class="row">
         <div class="img-container offset-3 col-2">
-            <img src=<%=usersdata.Fotodeperfil %> alt="foto de perfil" class="foto-perfil">
+            <img src=<%=usuarioslista.Fotodeperfil %> alt="foto de perfil" class="foto-perfil">
         </div>
         <div class="data-container col-6">
             <div class="d-flex align-items-center ">
-                <h1 class="main-title"> <%= usersdata.nombredesuario %>
+                <h1 class="main-title"> <%= usuarioslista.nombredesuario %>
                     <a href="/users/profile-edit">
                         <i class="fas fa-cog"></i>
                     </a>
@@ -38,12 +38,12 @@
         <% for(let i=0; i<productoslista.length; i++){ %>
         <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
-                <a href="/products">
+                <a href="/products/products">
                     <figure class="product-box_image">
                         <img src="<%= productoslista[i].imagen %>" alt="image" <%= productoslista[i].nombre %>>
                     </figure>
                     <article class="product-box_data">
-                        <h2><%= productoslista.nombre[i] %></h2>
+                        <h2><%= productoslista[i].nombre %></h2>
                         <p><%= productoslista[i].descripcion %></p>
                         <p>Comentarios: <%= comentarioslista.length %></p>
                     </article>

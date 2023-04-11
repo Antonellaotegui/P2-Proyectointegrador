@@ -8,9 +8,13 @@
             <h2 class="products-title">Resultados de búsqueda</h2>
         </div>
         <!-- Show the "ultimos" products -->
-        <h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-        Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-        ////////////////
-        </h2>
+        <div class="row">
+            <% for(let i=0; i< 1; i++){ %>
+            <article class="col-12 col-lg-8 product-detail-info">
+                <img src="<%= productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
+                <p class="product-detail-description">
+                    <p><%= productoslista[i].descripcion %></p></p>
+            </article></div>
+            <% } %>
 
 <%-include("./partials/footer.ejs") %>
