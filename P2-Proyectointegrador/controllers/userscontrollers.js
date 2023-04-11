@@ -14,7 +14,7 @@ const LoginController = {
         })
     },
     profileEdit: function (req,res){
-        res.render("profileEdit", {
+        res.render("profile-edit", {
             userlogueado:true
         })
     },
