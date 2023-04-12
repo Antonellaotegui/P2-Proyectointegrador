@@ -5,6 +5,7 @@
 
 /*====== Variables ======*/
 :root {
+<<<<<<< HEAD
   --yellow: #bb7c7c;
   --dark-blue: #bb7c7c;
   --light-blue: #000000;
@@ -12,6 +13,15 @@
   --light-gray: #bf3e3e;
   --green: #bb7c7c;
   --base-font-family: 'Inter', sans-serif;
+=======
+  --yellow: #FF9045;
+  --dark-blue: #03264C;
+  --light-blue: #000000;
+  --gray: #FF9045;;
+  --light-gray: #f5f5f5;
+  --green: #39b54a;
+  --base-font-family: 'Roboto', sans-serif
+>>>>>>> cec860606196d3f67ed4618981c98cd31f483d02
 }
 
 
@@ -155,7 +165,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/products/banner2.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
