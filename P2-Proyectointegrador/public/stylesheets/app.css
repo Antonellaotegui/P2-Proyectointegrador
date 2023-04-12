@@ -12,6 +12,7 @@
   --light-gray: #bf3e3e;
   --green: #bb7c7c;
   --base-font-family: 'Inter', sans-serif;
+
   --yellow: #FF9045;
   --dark-blue: #03264C;
   --light-blue: #000000;
@@ -461,6 +462,60 @@ textarea.form-input {
   resize: vertical;
   padding: 15px;
 }
+
+.cajaPrincipal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  margin: 0 auto;
+  background-color: #f2f2f2; /* Agrega el color de fondo que desees */
+  padding: 20px; /* Agrega un padding para separar los elementos del borde */
+  border-radius: 10px; /* Agrega bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra alrededor del formulario */
+}
+
+.correo,
+.texto,
+.contrasena,
+.fechadenac,
+.dni,
+.fotodeperfil {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+.registrate {
+  background-color:#FF9045;;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.registrate:hover {
+  background-color: #ffcaa7;
+}
+
+.crea-usuario{
+  color: #FF9045;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.parrafo {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link {
+  color: #FF9045;
+}
+
 
 /*====== Profile ======*/
 .info-usuario{

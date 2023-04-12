@@ -3,22 +3,25 @@
 
 <!-- Novedades -->
 <div class="container products-wrapper">
-    <div class="row">
+    <div>
         <div class="col-12">
-            <h2 class="products-title">Registrate</h2>
+            <h2 class="crea-usuario">Crea tu usuario!</h2>
         </div>
         <!-- Show the "ultimos" products -->
-        <form action="/products/products"method="GET" >
-            <input type="email" name="mail" value="" placeholder="email:">
-            <input type="text" name="usuario" value="" placeholder="usuario:">
-            <input type="password" name="contraseña" value="" placeholder="contraseña:">
-            <input type="date" name="fecha" value="" placeholder="fecha:">
-            <input type="number" name="documento" value="" placeholder="documento:">
-            <input type="text" name="fotodeperfil" value="" placeholder="Ingresa el link de tu foto de perfil: ">
+        <form class= "cajaPrincipal"action="/users/profile"method="GET" >
+            <input class="correo"type="email" name="mail" value="" placeholder="email:">
+            <input class="texto"type="text" name="usuario" value="" placeholder="usuario:">
+            <input class="contrasena"type="password" name="contraseña" value="" placeholder="contraseña:">
+            <input class="fechadenac"type="date" name="fecha" value="" placeholder="fecha:">
+            <input class="dni"type="number" name="documento" value="" placeholder="documento:">
+            <input class="fotodeperfil"type="text" name="fotodeperfil" value="" placeholder="foto de perfil: ">
+            <button class="registrate"type="submit" class="buy-now-button" href>Registrate</button>
         </form>
-        <p>¿Ya tienes una cuenta?
-            <a href="/users/login">Inicia Sesion </a>
+        <p class = "parrafo">¿Ya tienes una cuenta?
+            <a class="link"href="/users/login">Inicia Sesion </a>
         </p>
+    </div>
+</div>
 
 
 <%-include("./partials/footer.ejs") %>
