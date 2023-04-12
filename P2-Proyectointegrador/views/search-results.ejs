@@ -16,5 +16,15 @@
                     <p><%= productoslista[i].descripcion %></p></p>
             </article></div>
             <% } %>
+            <div class="col-12 col-lg-4">
+                <section class="comments">
+            <% for(let i=0; i<comentarioslista.length; i++){ %>
+                    <article>
+                        <img src="<%= comentarioslista[i].imagendeperfil %>" alt="imagendeperfil">
+                        <div class="data">
+                            <p class="user">
+                            <strong> <a href="/users/profile"><%= comentarioslista[i].usuario %> </a> </strong>
+                            <%= comentarioslista[i].comentario %></p>
+                        </div>
 
 <%-include("./partials/footer.ejs") %>
