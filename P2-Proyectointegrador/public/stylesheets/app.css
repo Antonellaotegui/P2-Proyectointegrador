@@ -5,6 +5,14 @@
 
 /*====== Variables ======*/
 :root {
+  --yellow: #bb7c7c;
+  --dark-blue: #bb7c7c;
+  --light-blue: #000000;
+  --gray: #000000;;
+  --light-gray: #bf3e3e;
+  --green: #bb7c7c;
+  --base-font-family: 'Inter', sans-serif;
+
   --yellow: #FF9045;
   --dark-blue: #03264C;
   --light-blue: #000000;
@@ -323,9 +331,10 @@ hr {
 }
 
 .product-detail-description {
-  padding: 15px 15px 15px 40px;
-  font-size: 1.8em;
-  line-height: 1.5;
+  padding: 10px;
+  color:orange;
+  font-size: 20px;
+
 }
 
 .product-detail-price {
@@ -586,4 +595,9 @@ textarea.form-input {
     width: 95%;
     margin: auto;
   }
+ 
+
+
 }
+
+

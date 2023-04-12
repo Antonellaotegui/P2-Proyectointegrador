@@ -5,7 +5,7 @@ let objliteral={
       Email: "antonellaotegui@icloud.com",
       Contraseña: "12345678",
       Fecha:"22/02/2004",
-      Fotodeperfil:"images/users/default-images.png",
+      Fotodeperfil:"/images/users/perfil.png",
   
   },
   
@@ -77,52 +77,54 @@ let objliteral={
         {
           usuario:"Antonella Otegui",
           comentario:"Muy buen material",
-          imagendeperfil:"/images/users/default-images.png"
+          imagendeperfil:"/images/users/perfil.png"
         },
         {
           usuario:"Clara Pellet",
           comentario:"Me duro un solo año",
-          imagendeperfil:"/images/users/default-images.png"
+          imagendeperfil:"/images/users/perfil.png"
         },
         {
           usuario:"Pilar Rolon",
           comentario:"Muy lindas",
-          imagendeperfil:"/images/users/default-images.png"
-        },
+          imagendeperfil:"/images/users/default-images.png",
+          imagendeperfil:"/images/users/perfil.png",
+          imagendeperfil:"/images/users/default-images.png"},
+
         {
           usuario:"Lara Grazzini",
           comentario:"muy practico",
-          imagendeperfil:"/images/users/default-images.png"
+          imagendeperfil:"/images/users/perfil.png"
         },
         {
           usuario:"Francesca Guadagni",
           comentario:"recomendado",
-          imagendeperfil:"/images/users/default-images.png"
+          imagendeperfil:"/images/users/perfil.png"
         },
         {
           usuario:"Sofia Arroyo",
           comentario:"no lo recomiendo tanto",
-          imagendeperfil:"/images/users/default-images.png"
+          imagendeperfil:"/images/users/perfil.png"
         },
         {
           usuario:"Santiago Rolon",
           comentario:"Excelente atencion",
-          imagendeperfil:"/images/users/default-images.png"
+          imagendeperfil:"/images/users/perfil.png"
         },
         {
           usuario:"Cecilia Latorre",
           comentario:"No me llego el talle que pedi, como puedo cambiarlo?",
-          imagendeperfil:"/images/users/default-images.png"
+          imagendeperfil:"/images/users/perfil.png"
         },
         {
           usuario:"Juan Cruz Benegas",
           comentario:"van a ingresar palos de otra marca?",
-          imagendeperfil:"/images/users/default-images.png"
+          imagendeperfil:"/images/users/perfil.png"
         },
         {
           usuario:"Maria De la Cruz",
           comentario:"Me llego antes de lo esperado y con un empaquetado muy seguro. Recomiendo",
-          imagendeperfil:"/images/users/default-images.png"
+          imagendeperfil:"/images/users/perfil.png"
         }
     ]
     }
