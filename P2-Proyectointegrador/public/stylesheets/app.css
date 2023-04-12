@@ -507,6 +507,10 @@ textarea.form-input {
   color: #FF9045;
 }
 
+.file{
+  padding-bottom: 10px;
+}
+
 
 /*====== Profile ======*/
 .info-usuario{
