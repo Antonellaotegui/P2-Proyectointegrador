@@ -3,18 +3,18 @@
 
 <!-- Novedades -->
 <div class="container products-wrapper">
+    <div class="product-detail">
     <div class="row">
         <div class="col-12">
             <h2 class="products-title">Resultados de búsqueda</h2>
         </div>
         <!-- Show the "ultimos" products -->
-        <div class="row">
             <% for(let i=0; i< 1; i++){ %>
             <article class="col-12 col-lg-8 product-detail-info">
                 <img src="<%= productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
                 <p class="product-detail-description">
                     <p><%= productoslista[i].descripcion %></p></p>
-            </article></div>
+            </article>
             <% } %>
             <div class="col-12 col-lg-4">
                 <section class="comments">
@@ -26,5 +26,16 @@
                             <strong> <a href="/users/profile"><%= comentarioslista[i].usuario %> </a> </strong>
                             <%= comentarioslista[i].comentario %></p>
                         </div>
-
+                    </article>
+            <% } %>
+                </section>
+                <form class="form" action="/products/detalle/4" method="get">
+                    <input class="form-input" type="text" value="" placeholder="Agregar comentario">
+                    <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                </form>
+            </div>
+    </div>
+    </div>
+</div>
+                    
 <%-include("./partials/footer.ejs") %>
