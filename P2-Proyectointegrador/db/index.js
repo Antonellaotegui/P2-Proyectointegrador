@@ -87,9 +87,13 @@ let objliteral={
         {
           usuario:"Pilar Rolon",
           comentario:"Muy lindas",
+<<<<<<< HEAD
           imagendeperfil:"/images/users/default-images.png",
           comentario:"4",
           imagendeperfil:"images/users/default-images.png"
+=======
+          imagendeperfil:"/images/users/default-images.png"
+>>>>>>> e222e97275fb82a1593e40fe384e66e73c5095ee
         },
         {
           usuario:"Lara Grazzini",
