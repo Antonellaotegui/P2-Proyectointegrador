@@ -2,8 +2,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 
 
+
 /*====== Variables ======*/
 :root {
+<<<<<<< HEAD
+  --yellow: #bb7c7c;
+  --dark-blue: #bb7c7c;
+  --light-blue: #000000;
+  --gray: #000000;;
+  --light-gray: #bf3e3e;
+  --green: #bb7c7c;
+  --base-font-family: 'Inter', sans-serif;
+=======
   --yellow: #FF9045;
   --dark-blue: #03264C;
   --light-blue: #000000;
@@ -11,6 +21,7 @@
   --light-gray: #f5f5f5;
   --green: #39b54a;
   --base-font-family: 'Roboto', sans-serif
+>>>>>>> cec860606196d3f67ed4618981c98cd31f483d02
 }
 
 
