@@ -560,7 +560,7 @@ textarea.form-input {
   }
   
   .link {
-    color: #4CAF50;
+    color: #FF9045;
   }
 
   /*== formulario login ==*/
@@ -587,7 +587,7 @@ textarea.form-input {
 }
 
 .registrate {
-  background-color: #4CAF50;
+  background-color: #FF9045;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -595,7 +595,7 @@ textarea.form-input {
 }
 
 .registrate:hover {
-  background-color: #3e8e41;
+  background-color: #cd6a29;
 }
 
 .oracion {
@@ -604,7 +604,7 @@ textarea.form-input {
 }
 
 .link {
-  color: #4CAF50;
+  color: #FF9045;
 }
 /*====== Profile ======*/
 .info-usuario{
