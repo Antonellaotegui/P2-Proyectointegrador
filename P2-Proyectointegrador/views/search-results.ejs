@@ -11,7 +11,8 @@
         <div class="row">
             <% for(let i=0; i< 1; i++){ %>
             <article class="col-12 col-lg-8 product-detail-info">
-                <img src="<%= productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
+                <img src= "<%= productoslista[i].imagen %>" alt="imagen">
+                <p><%= productoslista[i].nombre %></p>
                 <p class="product-detail-description">
                     <p><%= productoslista[i].descripcion %></p></p>
             </article></div>
@@ -20,7 +21,7 @@
                 <section class="comments">
             <% for(let i=0; i<comentarioslista.length; i++){ %>
                     <article>
-                        <img src="<%= comentarioslista[i].imagendeperfil %>" alt="imagendeperfil">
+                        <img src= "<%= comentarioslista[i].imagendeperfil %>" alt="imagendeperfil">
                         <div class="data">
                             <p class="user">
                             <strong> <a href="/users/profile"><%= comentarioslista[i].usuario %> </a> </strong>
