@@ -1,5 +1,5 @@
 <%-include("./partials/head.ejs") %>
-<%-include("./partials/header.ejs") %>2
+<%-include("./partials/header.ejs") %>
     <!-- Novedades -->
 	<body>
 		<div class="row">
@@ -12,10 +12,11 @@
 				<div><input class= "contra" type="password" name="contraseña" value="" placeholder="contraseña"></input></div>
 				<div><input class="recordar"type="checkbox" name="recordar" value="recordarme"></input></div>
 				<div><button type="submit"> Iniciar Sesion </button></div>
+				<p class="oracion">¿Ya tienes una cuenta?
+					<a class= "link" href="/users/registro"> Registrate</a>
+				</p>
 			</form>
-		<p class="oracion">¿Ya tienes una cuenta?
-			<a class= "link" href="/users/registro"> Registrate</a>
-		</p>
+	
 			
 		</div>
 	</body>
