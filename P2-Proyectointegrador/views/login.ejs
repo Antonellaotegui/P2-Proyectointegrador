@@ -1,24 +1,26 @@
 <%-include("./partials/head.ejs") %>
-<%-include("./partials/header.ejs") %>2
+<%-include("./partials/header.ejs") %>
     <!-- Novedades -->
-	<div class="container products-wrapper">
+	<body>
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form action="/users/profile"method="GET" >
-				<div><input type="email" name="user" value="" placeholder="usuario"></input></div>
-				<div><input type="password" name="contraseña" value="" placeholder="contraseña"></input></div>
-				<div><input type="checkbox" name="recordar" value="recordarme"></input></div>
-				<div><button type="submit"> Iniciar Sesion </button></div>
+			<form class = "contenedor"action="/users/profile"method="GET" >
+				<div><input class="mail" type="email" name="user" value="" placeholder="usuario"></input></div>
+				<div><input class= "contra" type="password" name="contraseña" value="" placeholder="contraseña"></input></div>
+				<div><input class="recordar"type="checkbox" name="recordar" value="recordarme"></input></div>
+				<div><button class="registrate"type="submit"> Iniciar Sesion </button></div>
+				<p class="oracion">¿Ya tienes una cuenta?
+					<a class= "link" href="/users/registro"> Registrate</a>
+				</p>
 			</form>
-		<p>¿Ya tienes una cuenta?
-			<a class="link" href="/users/registro"> Registrate</a>
-		</p>
-	
+			
+		</div>
+	</body>
 
 
 
-            <%-include("./partials/footer.ejs") %>
+ <%-include("./partials/footer.ejs") %>
 

@@ -525,7 +525,96 @@ link {
   color: #FF9045;
 }
 
+.file{
+  padding-bottom: 10px;
+}
 
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .mail,
+  .contra {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .recordar {
+    margin-right: 5px;
+  }
+  
+  .registrate {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .registrate:hover {
+    background-color: #3e8e41;
+  }
+  
+  .oracion {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .link {
+    color: #FF9045;
+  }
+
+  /*== formulario login ==*/
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.mail,
+.contra {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.recordar {
+  margin-right: 5px;
+}
+
+.registrate {
+  background-color: #FF9045;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.registrate:hover {
+  background-color: #cd6a29;
+}
+
+.oracion {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link {
+  color: #FF9045;
+}
 /*====== Profile ======*/
 .info-usuario{
   border-bottom: 1px solid #ccc;
