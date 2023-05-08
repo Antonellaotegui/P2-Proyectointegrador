@@ -288,12 +288,14 @@ hr {
   color: var(--gray);
   font-size: 2.4em;
   font-weight: 400;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .footer-data p {
   color: var(--gray);
   font-size: 1.5em;
   font-weight: 300;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .sub-footer {
@@ -523,6 +525,8 @@ textarea.form-input {
 }
 link {
   color: #FF9045;
+  font-size: 15px;
+
 }
 
 .file{
@@ -566,10 +570,13 @@ link {
   .oracion {
     margin-top: 20px;
     text-align: center;
+    font-size: 15px;
+
   }
   
   .link {
     color: #FF9045;
+    
   }
 
   /*== formulario login ==*/
