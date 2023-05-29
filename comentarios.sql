@@ -13,30 +13,26 @@ CONSTRAINT `fk_kiosko_producto`FOREIGN KEY (`producto_id`) REFERENCES productos(
 
 
 -- para que aparezca algun registro
-/*USE `stick`;
+USE `stick`;
 INSERT INTO  `comentarios` (users_id, producto_id, comentario) VALUES (
 1, 1, 'Muy buen material'
 );
 
-USE `stick`;
 INSERT INTO  `comentarios` (users_id, producto_id, comentario) VALUES (
 3, 4, 'Me duro un solo año'
 );
 
-USE `stick`;
 INSERT INTO  `comentarios` (users_id, producto_id, comentario) VALUES (
 4, 5, 'Muy lindas'
 );
 
-USE `stick`;
 INSERT INTO  `comentarios` (users_id, producto_id, comentario) VALUES (
 5, 6, 'Muy practico'
 );
 
-USE `stick`;
 INSERT INTO  `comentarios` (users_id, producto_id, comentario) VALUES (
 6, 7, 'Recomendado'
-);*/
+);
 
 
 

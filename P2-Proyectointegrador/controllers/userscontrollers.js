@@ -15,6 +15,7 @@ const LoginController = {
     },
     profileEdit: function (req,res){
         res.render("profile-edit", {
+            datosUsuario: usuarioslista,
             userlogueado:true
         })
     },
@@ -24,6 +25,7 @@ const LoginController = {
             usuarioslista: usuarioslista,
             productoslista: productoslista,
             comentarioslista: comentarioslista,
+            datosUsuario: usuarioslista,
             userlogueado:true
         })
     }
