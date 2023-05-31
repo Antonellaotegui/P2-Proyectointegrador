@@ -22,24 +22,14 @@ describe `users`;
 use `stick`;
 insert into `users` (nombre,email,password, dni, fecha_de_nacimiento)
 values ("clara", "cpelletlastra@udesa.edu.ar", "pepegrillo", 45819529, "2004-05-24");
-
-/*USE `stick`;
 INSERT INTO `users` (nombre,email,password, dni, fecha_de_nacimiento)
-VALUES ("Pilar", "prolon@udesa.edu.ar", "panchoysanti", 45667887, "2003-07-16")*/
-
-/*USE `stick`;
+VALUES ("Pilar", "prolon@udesa.edu.ar", "panchoysanti", 45667887, "2003-07-16");
 INSERT INTO `users` (nombre,email,password, dni, fecha_de_nacimiento)
-VALUES ("Sofia", "sarroyo@udesa.edu.ar", "soficapa", 45786956, "2004-06-17")*/
-
-/*USE `stick`;
+VALUES ("Sofia", "sarroyo@udesa.edu.ar", "soficapa", 45786956, "2004-06-17");
 INSERT INTO `users` (nombre,email,password, dni, fecha_de_nacimiento)
-VALUES ("Lara", "lgrazzini@udesa.edu.ar", "larita123", 45546982, "2004-06-07")*/
-
-/*USE `stick`;
+VALUES ("Lara", "lgrazzini@udesa.edu.ar", "larita123", 45546982, "2004-06-07");
 INSERT INTO `users` (nombre,email,password, dni, fecha_de_nacimiento)
-VALUES ("Antonella", "aoteguio@udesa.edu.ar", "antu", 45786953, "2003-09-23")*/
-
-USE `stick`;
+VALUES ("Antonella", "aoteguio@udesa.edu.ar", "antu", 45786953, "2003-09-23");
 INSERT INTO `users` (nombre,email,password, dni, fecha_de_nacimiento)
-VALUES ("Francesa", "fguadagni@udesa.edu.ar", "casas456", 45785699, "2003-09-01")
+VALUES ("Francesa", "fguadagni@udesa.edu.ar", "casas456", 45785699, "2003-09-01");
 

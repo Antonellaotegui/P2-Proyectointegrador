@@ -1,4 +1,4 @@
-const objliteral= require("../db/index")
+const objliteral= require("../db/index") 
 let usuarioslista= objliteral.usuario
 let productoslista= objliteral.productos
 let comentarioslista= objliteral.comentarios
