@@ -4,6 +4,7 @@ let productoslista= objliteral.productos
 let comentarioslista= objliteral.comentarios
 const LoginController = {
     login: function (req, res) {
+
         return res.render('login', {
             userlogueado:false
         })
@@ -39,6 +40,7 @@ const LoginController = {
         })
     }
 
+// agregar el rememberme ademas del email y password en checkUser tambien agregar lo de las cookies y el if de rememberme (todo en la primer clase de cookies)
 }
 
 

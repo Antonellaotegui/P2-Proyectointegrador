@@ -8,10 +8,6 @@ const index={
         db.Movies.findAll({
             raw: true,
             nest:true,
-            include:[
-                {association: 'generos'},
-                {association: 'actores'}
-            ]
             })
         .then(function(data){
             console.log(data)
@@ -25,7 +21,12 @@ const index={
         })
         .catch(function(err){console.log(err)})
     
-}
+},
+    logout: function (req, res){
+        userlogueado:false
+        res.redirect ("/")
+    }
+
 }
 
 module.exports = index;
