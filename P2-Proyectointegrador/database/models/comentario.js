@@ -1,5 +1,5 @@
 module.exports = function( sequelize, dataTypes) {
-    let alias =  'comentarios'
+    let alias =  'Comentarios'
     let cols = {
         id: {
             primaryKey: true,
@@ -20,6 +20,6 @@ module.exports = function( sequelize, dataTypes) {
         tableName:'comentarios',
         timestamps: false
     }
-    const Users = sequelize.define(alias, cols, config)
-    return Users
+    const Comentarios = sequelize.define(alias, cols, config)
+    return Comentarios
 }
