@@ -2,7 +2,7 @@ const objliteral= require("../db/index")
 let usuarioslista= objliteral.usuario
 let productoslista= objliteral.productos
 let comentarioslista= objliteral.comentarios
-const db = require("../database/models/index")
+const db = require("../database/models/Index")
 const index={
     index: function (req, res){
         db.Movies.findAll({
