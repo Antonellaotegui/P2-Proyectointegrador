@@ -1,13 +1,21 @@
 const objliteral= require("../db/index")
 let productoslista= objliteral.productos
 let comentarioslista= objliteral.comentarios
-let usuarioslista = objliteral.usuario
-const productoscontroller={  //el objeto literal del controlador adentro tiene muchos metodos, no son claves y valores como antes
+const productoscontroller={
+    products: function (req, res) {
+        return res.render("productos",{
+            comentarioslista:comentarioslista,
+            productoslista:productoslista,
+            userlogueado:false
+        } )
+
+    },
     productsadd: function (req, res) {
         return res.render('product-add',{
-            datosUsuario: usuarioslista,
-            userlogueado:true,
-        })   
+            productoslista: productoslista,
+            comentarioslista:comentarioslista,
+            userlogueado:true
+        })
     },
     detalle: function (req, res) {
        let indice = req.params.id
@@ -15,7 +23,7 @@ const productoscontroller={  //el objeto literal del controlador adentro tiene m
                 if (productoslista[i].id == indice){
                     res.render("productos",{
                         detalleProducto: productoslista[i],
-                        detalleComentarios: comentarioslista[i], //porque no se pone un igual y se ponen dos puntos?
+                        detalleComentarios: comentarioslista[i],
                         comentarioslista:comentarioslista,
                         productoslista:productoslista,
                         userlogueado:false

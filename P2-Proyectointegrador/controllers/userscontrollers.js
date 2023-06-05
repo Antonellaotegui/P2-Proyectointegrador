@@ -15,7 +15,6 @@ const LoginController = {
     },
     profileEdit: function (req,res){
         res.render("profile-edit", {
-            datosUsuario: usuarioslista,
             userlogueado:true
         })
     },
@@ -25,8 +24,18 @@ const LoginController = {
             usuarioslista: usuarioslista,
             productoslista: productoslista,
             comentarioslista: comentarioslista,
-            datosUsuario: usuarioslista,
             userlogueado:true
+        })
+    },
+    create: function(req, res){
+        // let name = req.body.name
+        // let email = req.body.email
+        // let password = req.body.password
+        let {name, email, password} = req.body
+        db.Users.create({
+            name,
+            email,
+            password
         })
     }
 
