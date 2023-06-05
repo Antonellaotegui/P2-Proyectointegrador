@@ -8,10 +8,6 @@ const index={
         db.Movies.findAll({
             raw: true,
             nest:true,
-            include:[
-                {association: 'generos'},
-                {association: 'actores'}
-            ]
             })
         .then(function(data){
             console.log(data)
