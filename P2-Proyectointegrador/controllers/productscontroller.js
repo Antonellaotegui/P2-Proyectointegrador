@@ -38,6 +38,13 @@ const productoscontroller={
             productoslista:productoslista,
             userlogueado:false
         })
+    },
+    editproduct: function (req, res){
+        res.render("search-results",{
+            comentarioslista:comentarioslista,
+            productoslista:productoslista,
+            userlogueado:true
+        })
     }
 }
 
