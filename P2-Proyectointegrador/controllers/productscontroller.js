@@ -1,6 +1,8 @@
 const objliteral= require("../db/index")
 let productoslista= objliteral.productos
 let comentarioslista= objliteral.comentarios
+const op = db.Sequelize.Op;
+
 const productoscontroller={
     products: function (req, res) {
         return res.render("productos",{
