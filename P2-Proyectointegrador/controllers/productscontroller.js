@@ -3,6 +3,8 @@
 // let comentarioslista= objliteral.comentarios
 let db = require ("../database/models/index")
 let Op = db.Sequelize.Op
+const op = db.Sequelize.Op;
+
 const productoscontroller={
     detalle: function (req, res){
         let indice = req.params.id
