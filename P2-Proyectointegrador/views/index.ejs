@@ -17,13 +17,13 @@
     <% for(let i=0; i< 8; i++){ %>
     <div class="col-12 col-sm-6 col-lg-3">
       <section class="product-box">
-        <a href="/products/detalle/4">
+        <a href="/products/detalle/<%- productosdata[i].id %>">
           <figure class="product-box_image">
-            <img src="<%= productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
+            <!-- <img src="<%= productosdata[i].imagen %>" alt="imagen" <%= productosdata[i].nombre %>> PONER BIEN EL NOMBRE DE LA IMAGEN -->
           </figure>
           <article class="product-box_data">
-            <h2><%= productoslista[i].nombre %></h2>
-            <p><%= productoslista[i].descripcion %></p>
+            <h2><%= productosdata[i].nombre %></h2>
+            <p><%= productosdata[i].descripcion %></p>
             <p>Comentarios: <%= comentarioslista.length %></p>
           </article>
         </a>

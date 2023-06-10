@@ -3,25 +3,32 @@ module.exports = function( sequelize, dataTypes) {
     let cols = {
         id: {
             primaryKey: true,
+            autoIncrement: true,
             type: dataTypes.INTEGER
         },
         nombre:{
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull:false
         },
         password:{
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull:false
         },
         email:{
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull:false
         },
         foto_de_perfil:{
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull:false
         },
         dni:{
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull:false
         },
         fecha_de_nacimiento:{
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
+            allowNull:false
         }
     }
     
@@ -34,13 +41,13 @@ module.exports = function( sequelize, dataTypes) {
     Users.associate = function(models){
         Users.hasMany(models.Productos, 
         {
-            as:'productos',
+            as:'userconproductos',
             foreignKey: 'users_id'
         });
     
         Users.hasMany(models.Comentarios,
             {
-                as:'comentarios',
+                as:'userconcomentarios',
                 foreignKey:'users_id',
             });
     }

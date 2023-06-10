@@ -6,13 +6,16 @@ module.exports = function( sequelize, dataTypes) {
             type: dataTypes.INTEGER
         },
         users_id:{
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         prodcuto_id:{
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         comentario:{
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false
         }
     }
     
@@ -26,12 +29,14 @@ module.exports = function( sequelize, dataTypes) {
 
     Comentarios.associate = function (models) {
         Comentarios.belongsTo(models.Productos, {
-            as: 'productos',
-            foreignKey : 'productos_id'
+            as: 'comentsconproductos',
+            foreignKey : 'productos_id',
+            timestamps: false
         })
         Comentarios.belongsTo(models.Users, {
-            as : 'users',
-            foreignKey : 'users_id'
+            as : 'comentsconusers',
+            foreignKey : 'users_id',
+            timestamps:false
         })
  }
 

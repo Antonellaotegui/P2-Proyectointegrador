@@ -19,12 +19,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use (function(req,res,next){
-  if(req.session.user !== undefined)
-  req.locals.isLogged = true
-  req.locals.user=req.locals.user
-  // TERMINAR DE VER CLASE
-})
+// app.use (function(req,res,next){
+//   if(req.session.user !== undefined){
+//     req.locals.isLogged = true
+//     req.locals.user=req.locals.user
+//   }else
+//   req.locals.isLogged = false
+
+//   // TERMINAR DE VER CLASE
+// })
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

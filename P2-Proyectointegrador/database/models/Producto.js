@@ -13,6 +13,9 @@ module.exports =  function(sequelize, dataTypes){
         },
         descripcion:{
             type: dataTypes.TEXT
+        },
+        created_at:{
+            type:dataTypes.DATE
         }
     }
 
@@ -28,13 +31,13 @@ module.exports =  function(sequelize, dataTypes){
         Productos.associate = function(models){
             Productos.belongsTo(models.Users, 
             {
-                as:'users',
+                as:'productsconusers',
                 foreignKey: 'users_id'
             });
         
             Productos.hasMany(models.Comentarios,
                 {
-                    as:'comentarios',
+                    as:'productsconcomentarios',
                     foreignKey:'productos_id',
             });
         
