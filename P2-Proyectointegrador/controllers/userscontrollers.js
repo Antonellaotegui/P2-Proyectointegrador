@@ -1,7 +1,6 @@
-const objliteral= require("../db/index")
-let usuarioslista= objliteral.usuario
-let productoslista= objliteral.productos
-let comentarioslista= objliteral.comentarios
+const db= require("../database/models/index")
+const bcrypt= require("bcryptjs")
+const user = require("../database/models/user")
 const LoginController = {
     login: function (req, res) {
 
@@ -15,30 +14,71 @@ const LoginController = {
         })
     },
     profileEdit: function (req,res){
-        res.render("profile-edit", {
-            userlogueado:true
+        db.Users.findByPK(req.params.id)
+        .then(function(usuario){
+            res.render("profile-edit", {
+            userlogueado:true,
+            usuario:usuario
+            })
         })
+        .catch(function(err){
+            console.log(err)
+        })
+        
     },
     
     profile: function (req, res){
-        return res.render('profile',{
-            usuarioslista: usuarioslista,
-            productoslista: productoslista,
-            comentarioslista: comentarioslista,
-            userlogueado:true
+        db.Users.findByPK(req.params.id)
+        .then(function(usuario){
+          return res.render('profile',{
+            userlogueado:true,
+            usuario:usuario
+            })  
         })
+        .catch(function(err){
+            console.log(err)
+        })
+        
     },
     create: function(req, res){
-        // let name = req.body.name
-        // let email = req.body.email
-        // let password = req.body.password
-        let {name, email, password} = req.body
-        db.Users.create({
-            name,
-            email,
-            password
+        let nombre= req.body.nombre
+        let email= req.body.email
+        let password= req.body.password
+
+        let passencriptada = bcrypt.hashSync(password, 12)
+        db.Users.create(
+            {
+                nombre:nombre,
+                email:email,
+                password:passencriptada
+            }
+        )
+        .then(function(resp){
+            res.redirect("/users/profile")
+        })
+        .catch(function(error){
+        })
+    },
+    chequeo: function(req,res){
+        let email= req.body.email
+        let password= req.body.password
+
+        db.Users.findOne({
+            where:{
+                email: email
+            }
+        })
+        .then(function(usuario){
+            let correctpass=bcrypt.compareSync(password,user.password)
+            if(correctpass){
+                res.redirect("/users/profile" + usuario.id)
+            }
+        })
+        .catch(function(err){
+            console.log(err)
         })
     }
+    
 
 // agregar el rememberme ademas del email y password en checkUser tambien agregar lo de las cookies y el if de rememberme (todo en la primer clase de cookies)
 }
