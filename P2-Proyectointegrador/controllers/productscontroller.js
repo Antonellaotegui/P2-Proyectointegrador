@@ -95,6 +95,7 @@ const productoscontroller={
         })
     },
     crear: function (req, res){
+        
         db.Productos.create({
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
