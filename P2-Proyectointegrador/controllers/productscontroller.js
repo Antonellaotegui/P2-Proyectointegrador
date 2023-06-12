@@ -7,8 +7,8 @@ let Op = db.Sequelize.Op
 const productoscontroller={
     detalle: function (req, res){
         let indice = req.params.id
-        db.Productos.findByPK(indice, {
-            raw:true,
+       
+        db.Productos.findByPk(indice, {
             include: [
                 {association: "productsconusers"},
                 {association: "productsconcomentarios"}

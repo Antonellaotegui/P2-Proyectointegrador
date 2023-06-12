@@ -6,12 +6,12 @@ const Op= db.sequelize.Op
 const LoginController = {
     login: function (req, res) {
         res.render('login', {
-            // userlogueado:false
+            userlogueado:false
         })
     },
     register: function (req, res) {
          res.render('registros',{
-            // userlogueado:false
+             userlogueado:false
         })
     },
     profileEdit: function (req,res){
@@ -131,6 +131,8 @@ const LoginController = {
         .then(function(usuario){
             let correctpass=bcrypt.compareSync(password,user.password)
             if(correctpass){
+                // res.session.user=usuario;
+                // res.locals.user=usuario;
                 res.redirect("/users/profile" + usuario.id)
             }
         })
