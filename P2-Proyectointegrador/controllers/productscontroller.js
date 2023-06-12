@@ -28,8 +28,8 @@ const productoscontroller={
     },
     products: function (req, res) {
         return res.render("productos",{
-            comentarioslista:comentarioslista,
-            productoslista:productoslista,
+            // comentarioslista:comentarioslista,
+            // productoslista:productoslista,
             userlogueado:false
         } )
     //         for(let i = 0; i< productoslista.length; i++){
@@ -47,7 +47,7 @@ const productoscontroller={
     
     },
     productsadd: function (req, res) {
-        return res.render('product-add',{
+        res.render('product-add',{
             // productoslista: productoslista,
             // comentarioslista:comentarioslista,
             userlogueado:true
@@ -89,8 +89,8 @@ const productoscontroller={
     },
     editproduct: function (req, res){
         res.render("search-results",{
-            comentarioslista:comentarioslista,
-            productoslista:productoslista,
+            // comentarioslista:comentarioslista,
+            // productoslista:productoslista,
             userlogueado:true
         })
     },
@@ -104,9 +104,24 @@ const productoscontroller={
         .then(function(data){
             res.redirect("/")   
             })
-        }
+        
         .catch(function(err){
         })
+    },
+        delete: function(req,res){
+        let id= req.params.id
+        db.Productos.destroy({
+            where:{
+                id:id
+            }
+        })
+        .then(function(res){
+            res.redirect("/")
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    }
     }
 
 

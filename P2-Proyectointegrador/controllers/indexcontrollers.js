@@ -7,19 +7,18 @@ const op = db.Sequelize.Op
 
 const index={
     index: function (req, res){
-        db.productos.findAll({  //estoy accediendo al modelo prdocuto.js el find all esta recibiendo una info en forma de proemsa y la esta logrando operar atrves de un console log
-           where:{
+        db.Productos.findAll({  //estoy accediendo al modelo prdocuto.js el find all esta recibiendo una info en forma de proemsa y la esta logrando operar atrves de un console log
             order:[
                 ["id", "DESC"], 
             ]
-        },
+})},
             raw: true, //array limpio sin cholco de info, datos que no me sirven y no necestio. Para manejar la ifno de una manera limpia y optima
             nest:true,
             include: [
                 {association: "productsconusers"},
                 {association: "productsconcomentarios"}
             ]
-            })
+            
             .then(function(data){
             res.render('index',{
                 usuarioslista: usuarioslista,
@@ -41,7 +40,7 @@ const index={
         }, //data se puede llamar de cualq manera
     
     logout: function (req, res){
-            userlogueado:false
+            // userlogueado:false (req.session.usuario)
             res.redirect ("/")
         }
     

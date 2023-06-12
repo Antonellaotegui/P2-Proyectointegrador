@@ -3,10 +3,12 @@ module.exports =  function(sequelize, dataTypes){
     let columnas = {
         id: {
             type: dataTypes.INTEGER,
-            primaryKey: true
+            primaryKey: true,
+            unsigned: true
         },
         users_id:{
-            type:dataTypes.INTEGER
+            type:dataTypes.INTEGER,
+            unsigned:true
         },
         nombre:{
             type: dataTypes.STRING
@@ -30,13 +32,8 @@ module.exports =  function(sequelize, dataTypes){
 
     let config = {
         tableName: 'productos',
-<<<<<<< HEAD
-        timestamps: 'false',
-        underScore:true
-=======
         timestamps: true,
         underscored: true
->>>>>>> f499fa5dc8499b12dcb32b94391b5719b5121d05
     }
 
     

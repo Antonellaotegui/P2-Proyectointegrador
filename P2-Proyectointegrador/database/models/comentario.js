@@ -40,11 +40,6 @@ module.exports = function( sequelize, dataTypes) {
             foreignKey : 'users_id',
             timestamps:false
         })
-<<<<<<< HEAD
  }
-=======
-}
-    
->>>>>>> f499fa5dc8499b12dcb32b94391b5719b5121d05
     return Comentarios
 }
