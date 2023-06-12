@@ -25,7 +25,8 @@ module.exports = function( sequelize, dataTypes) {
         tableName:'comentarios',
         timestamps: 'false',
         tableName:"comentarios",
-        timestamps: true
+        timestamps: true,
+        timestamps: 'false'
     }
     const Comentarios = sequelize.define(alias, cols, config);
 
@@ -47,4 +48,3 @@ module.exports = function( sequelize, dataTypes) {
 }
     
     return Comentarios
-    
