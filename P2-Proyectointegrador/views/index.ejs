@@ -17,14 +17,14 @@
     <% for(let i=0; i< 8; i++){ %>
     <div class="col-12 col-sm-6 col-lg-3">
       <section class="product-box">
-        <a href="/products/detalle/<%- productosdata[i].id %>">
+        <a href="/products/detalle/<%= data[i].id %>">
           <figure class="product-box_image">
-            <!-- <img src="<%= productosdata[i].imagen %>" alt="imagen" <%= productosdata[i].nombre %>> PONER BIEN EL NOMBRE DE LA IMAGEN -->
+            <!-- <img src="<%= data[i].imagen %>" alt="imagen" <%= data[i].nombre %>> PONER BIEN EL NOMBRE DE LA IMAGEN -->
           </figure>
           <article class="product-box_data">
-            <h2><%= productosdata[i].nombre %></h2>
-            <p><%= productosdata[i].descripcion %></p>
-            <p>Comentarios: <%= comentarioslista.length %></p>
+            <h2><%= data[i].nombre %></h2>
+            <p><%= data[i].descripcion %></p>
+            <!-- <p>Comentarios: <#%= comentarioslista.length %></p> -->
           </article>
         </a>
       </section>
@@ -90,12 +90,12 @@
       <section class="product-box">
         <a href="/products/detalle/3">
           <figure class="product-box_image">
-            <img src="<%=productoslista[i].imagen %>" alt="imagen" <%= productoslista[i].nombre %>>
+            <!-- <img src="<#3%=productoslista[i].imagen %>" alt="imagen" <#%= productoslista[i].nombre %>> -->
           </figure>
           <article class="product-box_data">
-            <h2><%= productoslista[i].nombre %></h2>
-            <p><%= productoslista[i].descripcion %></p>
-            <p>Comentarios: <%= comentarioslista.length %></p>
+            <!-- <h2><#%= productoslista[i].nombre %></h2> -->
+            <!-- <p><#%= productoslista[i].descripcion %></p> -->
+            <!-- <p>Comentarios: <#%= comentarioslista.length %></p> -->
           </article>
         </a>
       </section>

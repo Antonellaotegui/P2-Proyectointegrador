@@ -13,14 +13,16 @@ const index={
             include: [
                 {association: "productsconusers"},
                 {association: "productsconcomentarios"}
-            ]
-            
+            ]}
+        )
             .then(function(data){
-            res.render('index',{
-                usuarioslista: usuarioslista,
+            // res.send(data)
+            
+                res.render('index',{
+                // usuarioslista: usuarioslista,
                 data : data,
-                productoslista: productoslista,
-                comentarioslista: comentarioslista,
+                // productoslista: productoslista,
+                // comentarioslista: comentarioslista,
                 userlogueado:false
             })
         })
