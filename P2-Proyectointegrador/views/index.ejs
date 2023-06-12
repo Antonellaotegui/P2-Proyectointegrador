@@ -19,7 +19,7 @@
       <section class="product-box">
         <a href="/products/detalle/<%= data[i].id %>">
           <figure class="product-box_image">
-            <!-- <img src="<%= data[i].imagen %>" alt="imagen" <%= data[i].nombre %>> PONER BIEN EL NOMBRE DE LA IMAGEN -->
+            <img src="<%= data[i].imagen %>" alt="imagen" <%= data[i].nombre %>> PONER BIEN EL NOMBRE DE LA IMAGEN
           </figure>
           <article class="product-box_data">
             <h2><%= data[i].nombre %></h2>
@@ -88,14 +88,14 @@
     <% for(let i=0; i< 10; i++){ %>
     <div class="col-12 col-sm-6 col-lg-3">
       <section class="product-box">
-        <a href="/products/detalle/3">
+        <a href="/products/detalle/<%= data[i].id %>">
           <figure class="product-box_image">
-            <!-- <img src="<#3%=productoslista[i].imagen %>" alt="imagen" <#%= productoslista[i].nombre %>> -->
+            <img src="<%=data[i].imagen %>" alt="imagen" <%= data[i].nombre %>>
           </figure>
           <article class="product-box_data">
-            <!-- <h2><#%= productoslista[i].nombre %></h2> -->
-            <!-- <p><#%= productoslista[i].descripcion %></p> -->
-            <!-- <p>Comentarios: <#%= comentarioslista.length %></p> -->
+            <h2><%= data[i].nombre %></h2> 
+            <p><%= data[i].descripcion %></p>
+            <!-- <p>Comentarios: <#%= comentarioslista.length %></p>  -->
           </article>
         </a>
       </section>

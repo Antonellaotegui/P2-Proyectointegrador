@@ -20,8 +20,6 @@ const productoscontroller={
                 producto:data
             })
         })
-
-        
         .catch(function(err){
 
         })
