@@ -5,7 +5,7 @@ module.exports = function( sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        user_id:{
+        users_id:{
             type: dataTypes.INTEGER
         },
         producto_id:{
@@ -14,19 +14,16 @@ module.exports = function( sequelize, dataTypes) {
         comentario:{
             type: dataTypes.STRING
         },
-        createdAt: {
+        created_at: {
             type: dataTypes.DATE
         },
-        updatedAt: {
+        updated_at: {
             type: dataTypes.DATE
         }
     }
     let config= {
         tableName:'comentarios',
-        timestamps: 'false',
-        tableName:"comentarios",
-        timestamps: true,
-        timestamps: 'false'
+        timestamps: false,
     }
     const Comentarios = sequelize.define(alias, cols, config);
 
@@ -35,7 +32,7 @@ module.exports = function( sequelize, dataTypes) {
     Comentarios.associate = function (models) {
         Comentarios.belongsTo(models.Productos, {
             as: 'comentsconproductos',
-            foreignKey : 'productos_id',
+            foreignKey : 'producto_id',
             timestamps: false
         })
         Comentarios.belongsTo(models.Users, {
@@ -44,10 +41,7 @@ module.exports = function( sequelize, dataTypes) {
             timestamps:false
         })
  }
-<<<<<<< HEAD
-=======
 
+ return Comentarios
 }
     
->>>>>>> db12822a4368ad4d9eed8f06667454928dcf10af
-    return Comentarios
