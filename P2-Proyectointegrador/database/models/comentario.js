@@ -1,29 +1,31 @@
 module.exports = function( sequelize, dataTypes) {
-    let alias =  'Comentarios'
+    let alias =  'Comentarios';
     let cols = {
         id: {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        users_id:{
-            type: dataTypes.INTEGER,
-            allowNull: false
+        user_id:{
+            type: dataTypes.INTEGER
         },
-        prodcuto_id:{
-            type: dataTypes.INTEGER,
-            allowNull: false
+        producto_id:{
+            type: dataTypes.INTEGER
         },
         comentario:{
-            type: dataTypes.STRING,
-            allowNull: false
+            type: dataTypes.STRING
+        },
+        createdAt: {
+            type: dataTypes.DATE
+        },
+        updatedAt: {
+            type: dataTypes.DATE
         }
     }
-    
     let config= {
-        tableName:'comentarios',
-        timestamps: 'true'
+        tableName:"comentarios",
+        timestamps: true
     }
-    const Comentarios = sequelize.define(alias, cols, config)
+    const Comentarios = sequelize.define(alias, cols, config);
 
     //relaciones
 
@@ -38,11 +40,7 @@ module.exports = function( sequelize, dataTypes) {
             foreignKey : 'users_id',
             timestamps:false
         })
- }
-
-
-
-
-
+}
+    
     return Comentarios
 }

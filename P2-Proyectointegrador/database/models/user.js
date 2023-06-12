@@ -27,14 +27,23 @@ module.exports = function( sequelize, dataTypes) {
             allowNull:false
         },
         fecha_de_nacimiento:{
-            type: dataTypes.DATE,
-            allowNull:false
+            type: dataTypes.DATE
+        },
+        createdAt: {
+            type: dataTypes.DATE
+        },
+        updatedAt: {
+            type: dataTypes.DATE
+        },
+        deletedAt: {
+            type: dataTypes.DATE
         }
     }
     
     let config= {
         tableName:'users',
-        timestamps: 'true'
+        timestamps: true,
+        underscored:true,
     }
     const Users = sequelize.define(alias, cols, config)
 
