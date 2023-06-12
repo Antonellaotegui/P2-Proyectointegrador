@@ -1,16 +1,17 @@
-const db= require("../database/models/index")
+//const db= require("../database/models/index")
 const bcrypt= require("bcryptjs")
-const user = require("../database/models/user")
+const db= require("../database/models")
+const Op= db.sequelize.Op
+
 const LoginController = {
     login: function (req, res) {
-
-        return res.render('login', {
-            userlogueado:false
+        res.render('login', {
+            // userlogueado:false
         })
     },
     register: function (req, res) {
-        return res.render('registros',{
-            userlogueado:false
+         res.render('registros',{
+            // userlogueado:false
         })
     },
     profileEdit: function (req,res){
@@ -28,9 +29,19 @@ const LoginController = {
     },
     
     profile: function (req, res){
-        db.Users.findByPK(req.params.id)
+        db.Users.findByPK(req.params.id, {
+            include:[
+                {
+                    association: "productosconusuarios",
+                    association: "usuariosconcomentarios",
+                    raw:true,
+                    nest:true
+
+                }
+            ]
+        }) //req.session.usuario.id
         .then(function(usuario){
-          return res.render('profile',{
+          res.render('profile',{
             userlogueado:true,
             usuario:usuario
             })  
@@ -85,7 +96,7 @@ const LoginController = {
                 id:id
             }
         })
-        .then(function(resp){
+        .then(function(response){
             res.redirect("/")
         })
         .catch(function(err){

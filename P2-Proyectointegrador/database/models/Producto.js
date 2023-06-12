@@ -5,8 +5,8 @@ module.exports =  function(sequelize, dataTypes){
             type: dataTypes.INTEGER,
             primaryKey: true
         },
-        user_id:{
-            type:dataTypes.STRING
+        users_id:{
+            type:dataTypes.INTEGER
         },
         nombre:{
             type: dataTypes.STRING
@@ -15,7 +15,7 @@ module.exports =  function(sequelize, dataTypes){
             type: dataTypes.STRING
         },
         descripcion:{
-            type: dataTypes.TEXT
+            type: dataTypes.STRING
         },
         createdAt: {
             type: dataTypes.DATE
@@ -30,15 +30,19 @@ module.exports =  function(sequelize, dataTypes){
 
     let config = {
         tableName: 'productos',
+<<<<<<< HEAD
+        timestamps: 'false',
+        underScore:true
+=======
         timestamps: true,
         underscored: true
+>>>>>>> f499fa5dc8499b12dcb32b94391b5719b5121d05
     }
 
     
     const Productos = sequelize.define(alias, columnas, config)
 
-
-        Productos.associate = function(models){
+    Productos.associate = function(models){
             Productos.belongsTo(models.Users, 
             {
                 as:'productsconusers',
