@@ -7,7 +7,7 @@ const op = db.Sequelize.Op
 
 const index={
     index: function (req, res){
-        db.Productos.findAll({  //estoy accediendo al modelo prdocuto.js el find all esta recibiendo una info en forma de proemsa y la esta logrando operar atrves de un console log
+        db.productos.findAll({  //estoy accediendo al modelo prdocuto.js el find all esta recibiendo una info en forma de proemsa y la esta logrando operar atrves de un console log
            where:{
             order:[
                 ["id", "DESC"], 
@@ -22,7 +22,10 @@ const index={
             })
             .then(function(data){
             res.render('index',{
-                productosdata : data,
+                usuarioslista: usuarioslista,
+                data : data,
+                productoslista: productoslista,
+                comentarioslista: comentarioslista,
                 userlogueado:false
             })
         })

@@ -11,18 +11,32 @@ module.exports =  function(sequelize, dataTypes){
         nombre:{
             type: dataTypes.STRING
         },
+        imagen: {
+            type: dataTypes.STRING
+        },
         descripcion:{
             type: dataTypes.STRING
         },
-        created_at:{
-            type:dataTypes.DATE
+        createdAt: {
+            type: dataTypes.DATE
+        },
+        updatedAt: {
+            type: dataTypes.DATE
+        },
+        deletedAt: {
+            type: dataTypes.DATE
         }
     }
 
     let config = {
         tableName: 'productos',
+<<<<<<< HEAD
         timestamps: 'false',
         underScore:true
+=======
+        timestamps: true,
+        underscored: true
+>>>>>>> f499fa5dc8499b12dcb32b94391b5719b5121d05
     }
 
     
