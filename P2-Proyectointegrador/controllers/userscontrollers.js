@@ -77,6 +77,20 @@ const LoginController = {
         .catch(function(err){
             console.log(err)
         })
+    },
+    eliminar: function(req,res){
+        let id= req.params.id
+        db.Users.destroy({
+            where:{
+                id:id
+            }
+        })
+        .then(function(resp){
+            res.redirect("/")
+        })
+        .catch(function(err){
+            console.log(err)
+        })
     }
     
 
