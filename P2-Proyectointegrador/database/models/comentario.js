@@ -22,13 +22,8 @@ module.exports = function( sequelize, dataTypes) {
         }
     }
     let config= {
-<<<<<<< HEAD
         tableName:'comentarios',
         timestamps: 'false'
-=======
-        tableName:"comentarios",
-        timestamps: true
->>>>>>> f499fa5dc8499b12dcb32b94391b5719b5121d05
     }
     const Comentarios = sequelize.define(alias, cols, config);
 
