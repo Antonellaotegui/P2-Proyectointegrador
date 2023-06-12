@@ -37,7 +37,7 @@ const index={
         })
         }, //data se puede llamar de cualq manera
     
-        logout: function (req, res){
+    logout: function (req, res){
             userlogueado:false
             res.redirect ("/")
         }

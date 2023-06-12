@@ -34,7 +34,7 @@ module.exports = function( sequelize, dataTypes) {
     
     let config= {
         tableName:'users',
-        timestamps: 'true'
+        timestamps: 'false'
     }
     const Users = sequelize.define(alias, cols, config)
 
@@ -45,15 +45,11 @@ module.exports = function( sequelize, dataTypes) {
             foreignKey: 'users_id'
         });
     
-        Users.hasMany(models.Comentarios,
-            {
-                as:'userconcomentarios',
-                foreignKey:'users_id',
-            });
+    Users.hasMany(models.Comentarios,
+        {
+             as:'userconcomentarios',
+                 foreignKey:'users_id',
+             });
     }
-
-
-
-
-    return Users
+ return Users
 }

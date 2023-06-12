@@ -3,7 +3,7 @@ const userscontrollers = require("../controllers/userscontrollers")
 var router = express.Router();
 /* GET users listing. */
 router.get("/registro", userscontrollers.register)
-router.post ("/registro", userscontrollers.register.create)
+router.post ("/registro", userscontrollers.create)
 
 router.get("/login", userscontrollers.login)
 router.post("/login", userscontrollers.chequeo)
