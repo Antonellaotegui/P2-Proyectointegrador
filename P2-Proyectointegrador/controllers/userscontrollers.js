@@ -61,6 +61,7 @@ const LoginController = {
             where:{
                 email:email
             }
+            
         })
         if (email==""){
             let errors={};
@@ -176,5 +177,60 @@ const LoginController = {
 // agregar el rememberme ademas del email y password en checkUser tambien agregar lo de las cookies y el if de rememberme (todo en la primer clase de cookies)
 
 
+//let mail_repetido= {where:[{email: {[op.like]:req.body.mail}}]}
 
+
+//OTRA MANERA DE HACERLO SI NO FUNCIONA LO DE ARRIBA:
+
+// db.User.findOne(mail_repetido)
+// .then(function(mail_repetido){
+//     if (mail_repetido != undefined){
+//         errors.message = "El email ingresado ya esta registrado";
+//         res.locals.errors = errors
+//         return res.render('register')}
+    
+//     else{
+        
+//         if (req.body.mail == '' && req.body.contra == '' ){
+//             errors.message = "Los campos de Email y contraseña estan vacios, completelos";
+//             res.locals.errors = errors
+//             return res.render('register')
+//         }
+//         else if (req.body.mail == ''){
+//             errors.message = "El campo de Email esta vacio, completelo";
+//             res.locals.errors = errors
+//             return res.render('register')
+//         }  
+//         else if (req.body.contra == ''){
+//             errors.message = "El campo de Password esta vacio, completelo";
+//             res.locals.errors = errors
+//             return res.render('register')
+//         } 
+//         else if(req.body.contra.length <3){
+//             errors.message = "La contraseña debería tener al menos 3 caracteres";
+//             res.locals.errors = errors;
+//             return res.render('/register')
+//         }
+        
+//         else{
+//             db.User.create(user)
+//             .then(function(usuariocreado) {
+//                 return res.redirect('/')
+//             })
+//             .catch(function(e){
+//                 console.log(e);
+//             })
+//         }
+
+//     }
+// })
+// .catch(function(e){
+// console.log(e);
+// })
+
+
+
+
+// }
+// }
 module.exports = LoginController;
