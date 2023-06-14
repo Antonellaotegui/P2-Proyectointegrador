@@ -1,6 +1,7 @@
 //const db= require("../database/models/index")
 const bcrypt= require("bcryptjs")
 const db= require("../database/models")
+const { comentarios } = require("../db")
 const Op= db.sequelize.Op
 
 const LoginController = {
@@ -157,6 +158,22 @@ const LoginController = {
             console.log(err)
         })
     },
+    createcomment: function(req,res){
+        let users_id=req.session.user.id
+        let product_id=req.params.id
+        let {comment}= req.body
+        db.Comentarios.create({
+            comment:comment,
+            users_id:users_id,
+            product_id:product_id
+        })
+        .then(function(data){
+            res.redirect("/products/detalle" + product_id)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    }
     // eliminar: function(req,res){
     //     let id= req.params.id
     //     db.Users.destroy({

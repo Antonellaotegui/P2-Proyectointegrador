@@ -122,20 +122,27 @@ const productoscontroller={
         })
     },
     update: function (req,res){
-        id= req.session.user.id
-        db.Users.findByPK(id)
-        .then(function(usuario){
-            res.render("edit.product", {
-            // userlogueado:true,
-            usuario:usuario
-            })
+        let {nombre, descripcion, imagen,id}= req.body
+        db.Productos.update({
+            imagen:imagen,
+            nombre:nombre,
+            descripcion:descripcion,
+        }, 
+            {
+            where:{
+                id:id
+            }
+        })
+        .then(function(res){
+            res.redirect("/")
         })
         .catch(function(err){
             console.log(err)
         })
+        }
         
     }
-}
+
 
 
 
