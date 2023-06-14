@@ -11,8 +11,8 @@ router.post("/login", userscontrollers.chequeo)
 router.get ("/profile", userscontrollers.profile)
 // router.post("/delete/:id", userscontrollers.eliminar)
 
-router.get ("/profile-edit/:id", userscontrollers.profileEdit)
-router.post ("/profile-edit/:id", userscontrollers.chequeo)
+router.get ("/profile-edit", userscontrollers.profileEdit)
+router.post ("/profile-edit", userscontrollers.chequeo)
 
 module.exports = router;
 

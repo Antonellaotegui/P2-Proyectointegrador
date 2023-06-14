@@ -120,8 +120,22 @@ const productoscontroller={
         .catch(function(err){
             console.log(err)
         })
+    },
+    update: function (req,res){
+        id= req.session.user.id
+        db.Users.findByPK(id)
+        .then(function(usuario){
+            res.render("edit.product", {
+            // userlogueado:true,
+            usuario:usuario
+            })
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+        
     }
-    }
+}
 
 
 

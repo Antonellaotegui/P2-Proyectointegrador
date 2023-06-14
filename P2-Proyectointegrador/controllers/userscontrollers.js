@@ -20,7 +20,7 @@ const LoginController = {
         .then(function(usuario){
             res.render("profile-edit", {
             // userlogueado:true,
-            // usuario:usuario
+            usuario:usuario
             })
         })
         .catch(function(err){
@@ -30,22 +30,21 @@ const LoginController = {
     },
     
     profile: function (req, res){
-        id=req.session.user.id
+        let id=req.session.user.id
         db.Users.findByPK(id, {
+            nest:true,
             include:[
                 {
                     association: "productosconusuarios",
                     association: "usuariosconcomentarios",
-                    raw:true,
-                    nest:true
-
+                    
                 }
             ]
         }) 
         .then(function(usuario){
-          res.render('profile',{
+          res.render('profile',{usuarioinfo:usuario
             // userlogueado:true,
-            usuario:usuario
+            // usuario:usuario
             })  
         })
         .catch(function(err){
@@ -124,7 +123,7 @@ const LoginController = {
     chequeo: function(req,res){
         let email= req.body.email
         let password= req.body.password
-        let rememberme= req.body.rememberme
+        let rememberMe= req.body.rememberMe
 
         db.Users.findOne({
             where:{
@@ -139,7 +138,7 @@ const LoginController = {
                     nombre: usuario.nombre,
                     email: usuario.email
                 }
-                if (rememberme === "on"){
+                if (rememberMe === "on"){
                     res.cookie("rememberUser",{
                         id:usuario.id,
                         nombre: usuario.nombre,

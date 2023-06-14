@@ -7,6 +7,7 @@ router.post("/productadd", productscontroller.crear)
 router.get("/detalle/:id", productscontroller.detalle)
 router.get("/searchResults", productscontroller.searchresults)
 router.get ("/edit.product", productscontroller.editproduct)
+router.post ("/edit.product", productscontroller.update)
 router.post("/deleteproduct/:id",productscontroller.delete )
 
 module.exports = router;
