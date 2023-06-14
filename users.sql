@@ -6,7 +6,7 @@ id int unsigned primary key not null auto_increment,
 nombre varchar (20) not null,
 email varchar (30) not null,
 password varchar (200) not null, -- not null --> no puede no rellenarlo
-foto_de_perfil varchar (200),
+foto_de_perfil varchar (200) not null, 
 dni int not null unique,  -- unique --> no se puede repetir en otro usuario
 fecha_de_nacimiento date not null,
 created_at timestamp default current_timestamp(),
