@@ -9,19 +9,32 @@ const productoscontroller={
         let indice=req.params.id
         db.Productos.findByPk(indice, {
             include: [
-                {association: "productsconusers"},
-                {association: "productsconcomentarios"}
+                {association:"productsconcomentarios",
+                include: [{association: "comentsconusers"}]},
+                {association: "productsconusers"}
             ],
-            // order: [["productsconcomentarios","id","DESC"]]
+            order: [["productsconcomentarios","id","DESC"]]
         })
         .then(function(data){
+            let logeadoproducto
+            if(req.session.user != undefined){
+                if(req.session.user !== data.users_id){
+                    logeadoproducto= false
+                }else{
+                    logeadoproducto= true
+                }  
+            }else{
+                logeadoproducto= false
+            }
             res.render("productos", {
-                // userlogueado:false,
-                producto:data
+                comments:data.productsconcomentarios,
+                producto:data,
+                logeadoproducto
+                
             })
         })
         .catch(function(err){
-
+            console.log(err)
         })
     },
     products: function (req, res) {
@@ -56,31 +69,33 @@ const productoscontroller={
         let busqueda = req.query.search
         db.Productos.findAll({
             where:{
-                nombre:{
+                [Op.or]:[
+                {nombre:{
                     [Op.like]:`%{busqueda}%`
-                }, 
-                descripcion:{
+                }}, 
+                {descripcion:{
                     [Op.like]:`%{busqueda}%`
-                }, 
-                order:[
+                }}, 
+                
+            ]},
+            order:[
                     ["nombre", "DESC"], 
-                ]
-            },
+                ],
             raw:true,
         } )
         .then(function(data){
 
-            let encontroresultados
+            let hayresultados
             if (data.length > 0){
-                encontroresultados=true
+                hayresultados=true
             } else{
-                encontroresultados=false
+                hayresultados=false
             }
             res.render("search-results",{
                 // userlogueado:false,
                 search: busqueda,
                 resultados: data,
-                encontroresultados: encontroresultados
+                hayresultados: hayresultados
         })    
         })
 
@@ -93,18 +108,25 @@ const productoscontroller={
         })
     },
     crear: function (req, res){
+        let id= req.session.user.id
+        let nombre= req.body.nombre
+        let descripcion= req.body.descripcion
+        let imagen= req.body.imagen
         
-        db.Productos.create({
-            nombre: req.body.nombre,
-            descripcion: req.body.descripcion,
-            created_at: req.body.created_at
-            //falta imagen
-        })
+        db.Productos.create(
+            {
+            users_id:id,
+            nombre: nombre,
+            descripcion: descripcion,
+            imagen:imagen,
+            }
+        )
         .then(function(data){
-            res.redirect("/")   
+            res.redirect("/users/profile")
             })
         
         .catch(function(err){
+            console.log(err)
         })
     },
         delete: function(req,res){
@@ -127,6 +149,7 @@ const productoscontroller={
             imagen:imagen,
             nombre:nombre,
             descripcion:descripcion,
+            created_at:created_at
         }, 
             {
             where:{
@@ -139,7 +162,23 @@ const productoscontroller={
         .catch(function(err){
             console.log(err)
         })
-        }
+        },
+    // delete: function(req,res){
+    //     res.send(req.params)
+    //     let id= req.params.id
+    //     db.Productos.destroy({
+    //         where:{
+    //             id:id
+    //         }
+    //     })
+    //     .then(function(resp){
+    //         res.redirect("/")
+    //     })
+    //     .catch(function(err){
+    //         console.log(err)
+    //     })
+    // },
+
         
     }
 

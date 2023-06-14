@@ -6,7 +6,16 @@
     <div class="d-flex align-items-center">
         <h2 class="products-title"><% producto.nombre %></h2>
         <p class="product-detail-description">
-            <a href="/products/productadd">Editar</a>
+            <% if (isLogged) {%>
+                
+                <a href="/products/edit.product">Editar producto</a>
+                <a href="/products/deleteproduct/:id">Eliminar producto</a>
+                
+
+                <%} else { %>
+            
+                <%} %>
+            <a href="/products/productadd">Agregar producto</a>
         </p>
     </div>
     <div class="product-detail">

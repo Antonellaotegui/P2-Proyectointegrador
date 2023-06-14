@@ -59,6 +59,9 @@ const LoginController = {
         let email= req.body.email
         let password= req.body.password
         let fotodeperfil= req.body.fotodeperfil
+        let dni=req.body.dni
+        let fecha_de_nacimiento= req.body.fecha_de_nacimiento
+        
         db.Users.findOne({
             where:{
                 email:email
@@ -87,11 +90,14 @@ const LoginController = {
                 nombre:nombre,
                 email:email,
                 password:passencriptada,
-                foto_de_perfil:fotodeperfil
+                foto_de_perfil:fotodeperfil,
+                fecha_de_nacimiento: fecha_de_nacimiento,
+                dni:dni
             }
         )
-        .then(function(resp){
-            res.redirect("/users/profile")
+        .then(function(data){
+            res.redirect("/users/login")
+            console.log(data)
         })
         .catch(function(err){
             console.log(err)

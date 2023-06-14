@@ -2,7 +2,7 @@
 <%-include("./partials/header.ejs") %>
 
 <!-- Novedades -->
-<% if(encontroresultados) {%>
+<% if(hayresultados) {%>
     <div class="container products-wrapper">
             <div class="col-12">
                 <h2 class="products-title">Estos son los resultados de tu busqueda <% busqueda %></h2>
@@ -12,7 +12,7 @@
             <% for(let i=0; i< resultados.length; i++){ %>
                 <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
-                    <a href="/products/detalle/<%- resultados[i].id %>">
+                    <a href="/products/detalle/<%= resultados[i].id %>">
                     <figure class="product-box_image">
                         <!-- <img src="<%= resultados[i].imagen %>" alt="imagen" <%= resultados[i].nombre %>> PONER BIEN EL NOMBRE DE LA IMAGEN -->
                     </figure>
@@ -51,11 +51,11 @@
                         </div>
                     </article>
             <% } %> -->
-                </section>
+                <!-- </section>
                 <form class="form" action="/products/detalle/4" method="get">
                     <input class="form-input" type="text" value="" placeholder="Agregar comentario">
                     <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-                </form>
+                </form> -->
             </div>
     </div>
     </div>
