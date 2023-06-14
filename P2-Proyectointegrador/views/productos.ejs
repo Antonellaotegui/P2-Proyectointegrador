@@ -67,10 +67,20 @@
                 <p>
                     <a href="products/deleteproduct/:id"></a>
                 </p>
-                <form class="form" action="/products/detalle/4" method="get">
+
+                <% if (isLoggued) {%>
+                
+                <form class="form" action= "/products/add-comment <%= producto.id" %> "method = "POST">
+                    <input class="form-input" type="text" value="" name = "comentario" placeholder="Agregar comentario">
+                    <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                </form>
+
+                <%} else { %>
+                <form class="form" action= "/users/login"method = "get">
                     <input class="form-input" type="text" value="" placeholder="Agregar comentario">
                     <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                 </form>
+                <%} %>
                 <hr>
             </div>
         </div>
