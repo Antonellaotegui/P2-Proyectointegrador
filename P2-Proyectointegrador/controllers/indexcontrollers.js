@@ -22,7 +22,7 @@ const index={
                 data : data,
                 // productoslista: productoslista,
                 // comentarioslista: comentarioslista,
-                userlogueado:false
+                // userlogueado:false
             })
         })
         .catch(function(err){console.log(err)})
@@ -37,7 +37,7 @@ const index={
         }, //data se puede llamar de cualq manera
     
     logout: function (req, res){
-            // userlogueado:false (req.session.usuario)
+            req.session.user=undefined
             res.redirect ("/")
         }
     

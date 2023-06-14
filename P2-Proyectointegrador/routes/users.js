@@ -8,7 +8,7 @@ router.post ("/registro", userscontrollers.create)
 router.get("/login", userscontrollers.login)
 router.post("/login", userscontrollers.chequeo)
 
-router.get ("/profile/:id", userscontrollers.profile)
+router.get ("/profile", userscontrollers.profile)
 // router.post("/delete/:id", userscontrollers.eliminar)
 
 router.get ("/profile-edit/:id", userscontrollers.profileEdit)

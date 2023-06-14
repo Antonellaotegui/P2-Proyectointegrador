@@ -6,7 +6,7 @@ let Op = db.Sequelize.Op
 
 const productoscontroller={
     detalle: function (req, res){
-        let indice = req.params.id
+        let indice=req.session.user.id
        
         db.Productos.findByPk(indice, {
             include: [
@@ -16,7 +16,7 @@ const productoscontroller={
         })
         .then(function(data){
             res.render("productos", {
-                userlogueado:false,
+                // userlogueado:false,
                 producto:data
             })
         })
@@ -28,7 +28,7 @@ const productoscontroller={
         return res.render("productos",{
             // comentarioslista:comentarioslista,
             // productoslista:productoslista,
-            userlogueado:false
+            // userlogueado:false
         } )
     //         for(let i = 0; i< productoslista.length; i++){
     //             if (productoslista[i].id == indice){
@@ -48,7 +48,7 @@ const productoscontroller={
         res.render('product-add',{
             // productoslista: productoslista,
             // comentarioslista:comentarioslista,
-            userlogueado:true
+            // userlogueado:true
         })
     },
 
@@ -77,7 +77,7 @@ const productoscontroller={
                 encontroresultados=false
             }
             res.render("search-results",{
-                userlogueado:false,
+                // userlogueado:false,
                 search: busqueda,
                 resultados: data,
                 encontroresultados: encontroresultados
@@ -89,7 +89,7 @@ const productoscontroller={
         res.render("search-results",{
             // comentarioslista:comentarioslista,
             // productoslista:productoslista,
-            userlogueado:true
+            // userlogueado:true
         })
     },
     crear: function (req, res){

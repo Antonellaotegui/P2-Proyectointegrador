@@ -6,20 +6,21 @@ const Op= db.sequelize.Op
 const LoginController = {
     login: function (req, res) {
         res.render('login', {
-            userlogueado:false
+            // userlogueado:false
         })
     },
     register: function (req, res) {
          res.render('registros',{
-             userlogueado:false
+            //  userlogueado:false
         })
     },
     profileEdit: function (req,res){
-        db.Users.findByPK(req.params.id)
+        id= req.session.user.id
+        db.Users.findByPK(id)
         .then(function(usuario){
             res.render("profile-edit", {
-            userlogueado:true,
-            usuario:usuario
+            // userlogueado:true,
+            // usuario:usuario
             })
         })
         .catch(function(err){
@@ -29,7 +30,8 @@ const LoginController = {
     },
     
     profile: function (req, res){
-        db.Users.findByPK(req.params.id, {//req.session.usuario.id
+        id=req.session.user.id
+        db.Users.findByPK(id, {
             include:[
                 {
                     association: "productosconusuarios",
@@ -42,7 +44,7 @@ const LoginController = {
         }) 
         .then(function(usuario){
           res.render('profile',{
-            userlogueado:true,
+            // userlogueado:true,
             usuario:usuario
             })  
         })
@@ -122,18 +124,33 @@ const LoginController = {
     chequeo: function(req,res){
         let email= req.body.email
         let password= req.body.password
+        let rememberme= req.body.rememberme
 
         db.Users.findOne({
             where:{
-                email: email
+                email
             }
         })
         .then(function(usuario){
             let correctpass=bcrypt.compareSync(password,user.password)
             if(correctpass){
-                // res.session.user=usuario;
-                // res.locals.user=usuario;
-                res.redirect("/users/profile" + usuario.id)
+                res.session.user= {
+                    id:usuario.id,
+                    nombre: usuario.nombre,
+                    email: usuario.email
+                }
+                if (rememberme === "on"){
+                    res.cookie("rememberUser",{
+                        id:usuario.id,
+                        nombre: usuario.nombre,
+                        email: usuario.email
+                    },{
+                        maxAge: 1000 * 15
+                    }
+                    
+                    )
+                }
+                res.redirect("/users/profile" )
             }
         })
         .catch(function(err){
