@@ -28,13 +28,15 @@ app.use (session({
 }))
 
 app.use (function(req,res,next){
-  if(req.session.user !== undefined){
+  if(req.session.user != undefined){
     res.locals.isLogged = true
     res.locals.user=req.session.user
+    
   }else{
     res.locals.isLogged = false
-  }
     
+  }
+    return next()
 })
 
 app.use('/', indexRouter);

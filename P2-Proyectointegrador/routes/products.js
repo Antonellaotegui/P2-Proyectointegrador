@@ -9,6 +9,6 @@ router.get("/searchResults", productscontroller.searchresults)
 router.get ("/edit.product", productscontroller.editproduct)
 router.post ("/edit.product", productscontroller.update)
 router.post("/deleteproduct/:id",productscontroller.delete )
-router.post("/add-comment/:id", productscontroller.createcomment)
+// router.post("/add-comment/:id", productscontroller.createcomment)
 
 module.exports = router;

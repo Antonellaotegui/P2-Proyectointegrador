@@ -54,9 +54,11 @@ const LoginController = {
         
     },
     create: function(req, res){
+        // res.send(req.body)
         let nombre= req.body.nombre
         let email= req.body.email
         let password= req.body.password
+        let fotodeperfil= req.body.fotodeperfil
         db.Users.findOne({
             where:{
                 email:email
@@ -67,24 +69,25 @@ const LoginController = {
             let errors={};
             errors.message= "Debes ingresar un email"
             req.locals.errors= errors
-            res.render ("register", );
+            res.render ("registros", );
         } else if (password==""){
             let errors={};
             errors.message= "Debes ingresar una contraseña"
             res.locals.errors =errors
-            res.render("register");
+            res.render("registros");
         }else if(password.length<3){
             let errors={};
             errors.message= "La contraseña debe tener mas de tres digitos"
             res.locals.errors =errors
-            res.render("register");
+            res.render("registros");
         }else{
             let passencriptada = bcrypt.hashSync(password, 12)
         db.Users.create(
             {
                 nombre:nombre,
                 email:email,
-                password:passencriptada
+                password:passencriptada,
+                foto_de_perfil:fotodeperfil
             }
         )
         .then(function(resp){
@@ -96,7 +99,7 @@ const LoginController = {
                 let errors={}
                 errors.mensaje= "este mail ya esta ocupado por otro usuario"
                 res.locals.errors=errors
-                res.render("register")
+                res.render("registros")
             }
         })
         }
@@ -118,7 +121,7 @@ const LoginController = {
                 let errors={}
                 errors.mensaje= "este mail ya esta ocupado por otro usuario"
                 res.locals.errors=errors
-                res.render("register")
+                res.render("registros")
             }
         })
     },

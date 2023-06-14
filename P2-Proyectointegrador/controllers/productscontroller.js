@@ -6,13 +6,13 @@ let Op = db.Sequelize.Op
 
 const productoscontroller={
     detalle: function (req, res){
-        let indice=req.session.user.id
-       
+        let indice=req.params.id
         db.Productos.findByPk(indice, {
             include: [
                 {association: "productsconusers"},
                 {association: "productsconcomentarios"}
-            ]
+            ],
+            // order: [["productsconcomentarios","id","DESC"]]
         })
         .then(function(data){
             res.render("productos", {
