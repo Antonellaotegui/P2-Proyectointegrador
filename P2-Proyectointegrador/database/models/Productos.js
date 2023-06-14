@@ -13,7 +13,7 @@ module.exports =  function(sequelize, dataTypes){
         nombre:{
             type: dataTypes.STRING
         },
-        image: {
+        imagen: {
             type: dataTypes.STRING
         },
         descripcion:{
