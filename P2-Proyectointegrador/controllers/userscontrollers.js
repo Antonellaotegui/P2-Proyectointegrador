@@ -34,13 +34,13 @@ const LoginController = {
         let id=req.session.user.id
         db.Users.findByPk(id, {
             nest:true,
-            include:[
+            include:
                 {
-                    association: "productosconusuarios",
-                    association: "userconcomentarios",
+                    association: "userconproductos"
+                  
                     
                 }
-            ]
+        
         }) 
         .then(function(usuario){
           res.render('profile',{
@@ -55,19 +55,28 @@ const LoginController = {
         
     },
     create: function(req, res){
-        // res.send(req.body)
+        
         let nombre= req.body.nombre
         let email= req.body.email
         let password= req.body.password
         let fotodeperfil= req.body.fotodeperfil
         let dni=req.body.dni
         let fecha_de_nacimiento= req.body.fecha_de_nacimiento
-        
+        // res.send(req.body)
+       
         db.Users.findOne({
             where:{
                 email:email
             }
             
+        })
+        .then(function (repetido) {
+            if (repetido != undefined) {
+                let errors = {}
+                errors.message = 'Ya existe un usuario con este email'
+                res.locals.errors = errors
+                res.render('register');
+            }
         })
         if (email==""){
             let errors={};
