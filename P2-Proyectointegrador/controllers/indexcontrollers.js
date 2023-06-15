@@ -33,11 +33,9 @@ const index={
     },
     
     logout: function (req, res){
-            req.session.user=undefined
+            req.session.user= undefined
             res.redirect ("/")
         }
-    
-
 }
 
 

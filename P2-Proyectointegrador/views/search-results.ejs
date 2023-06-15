@@ -5,7 +5,7 @@
 <% if(hayresultados) {%>
     <div class="container products-wrapper">
             <div class="col-12">
-                <h2 class="products-title">Estos son los resultados de tu busqueda <% busqueda %></h2>
+                <h2 class="products-title">Estos son los resultados de tu busqueda "<%= busqueda %>"</h2>
             </div>
 
         <div class="row">
@@ -14,40 +14,42 @@
                 <section class="product-box">
                     <a href="/products/detalle/<%= resultados[i].id %>">
                     <figure class="product-box_image">
-                        <!-- <img src="<%= resultados[i].imagen %>" alt="imagen" <%= resultados[i].nombre %>> PONER BIEN EL NOMBRE DE LA IMAGEN -->
+                        <img src=<%= resultados[i].imagen %>"> <alt=<%= resultados[i].nombre %>>
                     </figure>
                     <article class="product-box_data">
                         <h2><%= resultados[i].nombre %></h2>
                         <p><%= resultados[i].descripcion %></p>
-                        <!-- <p>Comentarios: <%= comentarioslista.length %></p> -->
+                        <p>Publicado por <%=resultados[i].productsconusers.nombre %></p>
+								<br>
+                        <!-- <p>Comentarios: <#%= comentarioslista.length %></p> -->
                     </article>
                     </a>
                 </section>
                 </div>
                 <% } %>
 <% } else {%>
-    <h1>No hay resultados para su criterio de búsqueda</h1>
+    <h1>No hay resultados para su criterio de búsqueda: "<%= busqueda %>"</h1>
     <% } %>
 
 
         <!-- Show the "ultimos" products
-            <% for(let i=0; i< resultados.length; i++){ %>
+            <#% for(let i=0; i< resultados.length; i++){ %>
             <article class="col-12 col-lg-8 product-detail-info">
                 <img src= "<%= productoslista[i].imagen %>" alt="imagen">
-                <p><%= productoslista[i].nombre %></p>
+                <p><#%= productoslista[i].nombre %></p>
                 <p class="product-detail-description">
-                    <p><%= productoslista[i].descripcion %></p></p>
+                    <p><#%= productoslista[i].descripcion %></p></p>
             </article>
             <% } %>
             <div class="col-12 col-lg-4">
                 <section class="comments">
-            <% for(let i=0; i<comentarioslista.length; i++){ %>
+            <#% for(let i=0; i<comentarioslista.length; i++){ %>
                     <article>
-                        <img src= "<%= comentarioslista[i].imagendeperfil %>" alt="imagendeperfil">
+                        <img src= "<#%= comentarioslista[i].imagendeperfil %>" alt="imagendeperfil">
                         <div class="data">
                             <p class="user">
-                            <strong> <a href="/users/profile"><%= comentarioslista[i].usuario %> </a> </strong>
-                            <%= comentarioslista[i].comentario %></p>
+                            <strong> <a href="/users/profile"><#%= comentarioslista[i].usuario %> </a> </strong>
+                            <#%= comentarioslista[i].comentario %></p>
                         </div>
                     </article>
             <% } %> -->

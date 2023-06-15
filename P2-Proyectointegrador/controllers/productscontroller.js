@@ -10,10 +10,9 @@ const productoscontroller={
         db.Productos.findByPk(indice, {
             include: [
                 {association:"productsconcomentarios",
-                include: [{association: "comentsconusers"}]},
-                {association: "productsconusers"}
+                association: "productsconusers"}
             ],
-            order: [["productsconcomentarios","id","DESC"]]
+            // order: [["productsconcomentarios","id","DESC"]]
         })
         .then(function(data){
             let logeadoproducto
@@ -79,13 +78,14 @@ const productoscontroller={
                 
             ]},
             order:[
-                    ["nombre", "DESC"], 
+                    ["created_at", "DESC"], 
                 ],
+            include:  {association:"productsconusers"},
             raw:true,
         } )
         .then(function(data){
 
-            let hayresultados = " "
+            let hayresultados
             if (data.length > 0){
                 hayresultados=true
             } else{
@@ -96,17 +96,20 @@ const productoscontroller={
                 search: busqueda,
                 resultados: data,
                 hayresultados: hayresultados
-        })    
+        }) 
+        })
+        .catch(function(err){
+            console.log(err)
         })
 
     },
     editproduct: function (req, res){
         let indice=req.params.id
         db.Productos.findByPk(indice, {
-
+            nest: true,
+            include:{association:"productsconusers"}
         })
         .then(function(data){
-
             res.render("edit_product", {
                 producto:data,
             })
@@ -153,7 +156,8 @@ const productoscontroller={
         })
     },
     update: function (req,res){
-        let {nombre, descripcion, imagen,id}= req.body
+        let id = req.params.id
+        let {nombre, descripcion, imagen, created_at }= req.body
         db.Productos.update({
             imagen:imagen,
             nombre:nombre,
@@ -166,7 +170,7 @@ const productoscontroller={
             }
         })
         .then(function(res){
-            res.redirect("/")
+            res.redirect("/products/detalle/${id}")
         })
         .catch(function(err){
             console.log(err)
