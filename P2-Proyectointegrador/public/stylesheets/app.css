@@ -645,7 +645,36 @@ link {
   color: #fff;
 }
 
+/*====== formulario edit product ======*/
 
+.formulario-editproduct {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.cajita {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.registrate {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: rgb(255, 146, 51);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.registrate:hover {
+  background-color: #45a049;
+}
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {
