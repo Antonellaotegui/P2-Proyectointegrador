@@ -665,15 +665,16 @@ link {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #4CAF50;
-  color: rgb(255, 146, 51);
+  background-color: #FF9045;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  
 }
 
 .registrate:hover {
-  background-color: #45a049;
+  background-color: #fce7d9;
 }
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
