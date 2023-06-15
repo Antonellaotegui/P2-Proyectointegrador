@@ -176,6 +176,22 @@ const productoscontroller={
             console.log(err)
         })
         },
+        createcomment: function(req,res){
+            let users_id=req.session.user.id
+            let product_id=req.params.id
+            let {comment}= req.body
+            db.Comentarios.create({
+                comment:comment,
+                users_id:users_id,
+                product_id:product_id
+            })
+            .then(function(data){
+                res.redirect("/products/detalle" + product_id)
+            })
+            .catch(function(err){
+                console.log(err)
+            })
+        }
     // delete: function(req,res){
     //     res.send(req.params)
     //     let id= req.params.id

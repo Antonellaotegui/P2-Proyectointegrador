@@ -168,22 +168,25 @@ const LoginController = {
             console.log(err)
         })
     },
-    createcomment: function(req,res){
-        let users_id=req.session.user.id
-        let product_id=req.params.id
-        let {comment}= req.body
-        db.Comentarios.create({
-            comment:comment,
-            users_id:users_id,
-            product_id:product_id
-        })
-        .then(function(data){
-            res.redirect("/products/detalle" + product_id)
-        })
-        .catch(function(err){
-            console.log(err)
-        })
-    }
+    // createcomment: 
+
+    //     function(req,res){
+    
+    //         if(req.session.user){
+    //         db.comentarios.create({
+    //             product_id: req.params.id,
+    //             users_id: req.session.user.id,
+    //             comentario: req.body.comentario
+    //         })
+    //             res.redirect(`/products/detalle/${req.params.id}`)
+    //           }
+    //         else{
+    //             res.redirect('/users/login')
+    //         }
+           
+    //     }
+
+    // }
     // eliminar: function(req,res){
     //     let id= req.params.id
     //     db.Users.destroy({
