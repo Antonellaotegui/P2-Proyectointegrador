@@ -85,7 +85,7 @@ const productoscontroller={
         } )
         .then(function(data){
 
-            let hayresultados
+            let hayresultados = " "
             if (data.length > 0){
                 hayresultados=true
             } else{
@@ -101,7 +101,7 @@ const productoscontroller={
 
     },
     editproduct: function (req, res){
-        res.render("search-results",{
+        res.render("edit_product",{
             // comentarioslista:comentarioslista,
             // productoslista:productoslista,
             // userlogueado:true

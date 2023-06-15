@@ -3,6 +3,7 @@ module.exports =  function(sequelize, dataTypes){
     let columnas = {
         id: {
             type: dataTypes.INTEGER,
+            autoIncrement: true,
             primaryKey: true,
             unsigned: true
         },

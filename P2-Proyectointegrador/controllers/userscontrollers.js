@@ -32,18 +32,19 @@ const LoginController = {
     
     profile: function (req, res){
         let id=req.session.user.id
-        db.Users.findByPK(id, {
+        db.Users.findByPk(id, {
             nest:true,
             include:[
                 {
                     association: "productosconusuarios",
-                    association: "usuariosconcomentarios",
+                    association: "userconcomentarios",
                     
                 }
             ]
         }) 
         .then(function(usuario){
-          res.render('profile',{usuarioinfo:usuario
+          res.render('profile',{
+            usuarioinfo:usuario
             // userlogueado:true,
             // usuario:usuario
             })  
@@ -142,9 +143,9 @@ const LoginController = {
             }
         })
         .then(function(usuario){
-            let correctpass=bcrypt.compareSync(password,user.password)
+            let correctpass=bcrypt.compareSync(password,usuario.password)
             if(correctpass){
-                res.session.user= {
+                req.session.user= {
                     id:usuario.id,
                     nombre: usuario.nombre,
                     email: usuario.email

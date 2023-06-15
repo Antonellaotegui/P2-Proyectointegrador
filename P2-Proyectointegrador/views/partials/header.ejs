@@ -27,7 +27,7 @@
         </button>
 
         <% if (isLogged){ %>
-            <nav class="main-navbar">
+            <!-- <nav class="main-navbar">
                 <ul class="left-navbar">
                     <li><a href="/">Todos los productos</a></li>
                     <li><a href="/products/productadd">Cargar productos</a></li>
@@ -35,11 +35,11 @@
     
                 <ul class="right-navbar">
                     <li><a href="/users/profile">
-                            Nombre del usuario <i class="fas fa-user"></i>
+                        <%#= usuario.nombre %> <i class="fas fa-user"></i>
                         </a>
                     </li>
                     <li>
-                        <form action="/" method="POST">
+                        <form action="/" method="get"> 
                             <button class="logout" type="submit">
                                 Cerrar sesión <i class="fas fa-sign-in-alt"></i>
                             </button>
@@ -53,7 +53,7 @@
                         <a href="login.html">Ingresá <i class="fas fa-sign-in-alt"></i></a>
                     </li> -->
                 </ul>
-            </nav>
+            </nav> -->
         <% } else {  %>
         <nav class="main-navbar">
             <ul class="left-navbar">
