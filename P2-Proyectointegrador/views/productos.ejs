@@ -7,15 +7,18 @@
         <h2 class="products-title"><% producto.nombre %></h2>
         <p class="product-detail-description">
             <% if (isLogged) {%>
+                <a href="/products/productadd">Agregar producto</a>
+    
+                <% if (logeadoproducto) {%>
+                    <a href="/products/edit_product">Editar producto</a>
                 
-                <a href="/products/edit_product">Editar producto</a>
-                <a href="/products/deleteproduct/:id">Eliminar producto</a>
+                    <%} else { %>
                 
-
+                    <%} %>
                 <%} else { %>
             
                 <%} %>
-            <!-- <a href="/products/productadd">Agregar producto</a> -->
+            
         </p>
     </div>
     <div class="product-detail">

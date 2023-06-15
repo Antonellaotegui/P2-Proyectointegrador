@@ -101,11 +101,20 @@ const productoscontroller={
 
     },
     editproduct: function (req, res){
-        res.render("edit_product",{
-            // comentarioslista:comentarioslista,
-            // productoslista:productoslista,
-            // userlogueado:true
+        let indice=req.params.id
+        db.Productos.findByPk(indice, {
+
         })
+        .then(function(data){
+
+            res.render("edit_product", {
+                producto:data,
+            })
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+
     },
     crear: function (req, res){
         let id= req.session.user.id
