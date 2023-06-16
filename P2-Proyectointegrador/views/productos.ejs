@@ -11,12 +11,12 @@
         <h2 class="products-title"><% producto.nombre %></h2>
         <p class="product-detail-description">
             
-    
-                <% if (logeadoproducto) {%>
-                    <a href="/products/edit_product">Editar producto</a>
-                
-                    <%}%>
-            
+            <% if (logeadoproducto) {%>
+                <a href="/products/edit_product/<%= producto.id %>"><strong>Editar</strong></a> |
+                <a href="/products/deleteproduct/<%= producto.id %>"><strong>Borrar</strong></a>
+            <%} %>
+        </p>
+        
             
         </p>
     </div>

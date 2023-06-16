@@ -20,15 +20,16 @@ const productoscontroller={
         })
         .then(function(data){
             let logeadoproducto
-            if(req.session.user != undefined){
-                if(req.session.user !== data.users_id){
-                    logeadoproducto= false
-                }else{
-                    logeadoproducto= true
-                }  
-            }else{
-                logeadoproducto= false
-            }
+            if (req.session.user !== undefined){
+                if(req.session.user.id !== data.users_id){
+                    logeadoproducto = false
+                }else {
+                    logeadoproducto = true
+                }
+             } else {
+                logeadoproducto = false
+             }
+
             res.render("productos", {
                 comentario:data.productsconcomentarios,
                 producto:data,
