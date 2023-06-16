@@ -114,40 +114,7 @@ const LoginController = {
     let email = req.body.email;
     let password = req.body.password;
     let rememberMe = req.body.rememberMe;
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  },
-  chequeo: function (req, res) {
-    let email = req.body.email;
-    let password = req.body.password;
-    let rememberMe = req.body.rememberMe;
 
-    db.Users.findOne({
-      where: {
-        email: email,
-      },
-    })
-      .then(function (usuario) {
-        if (usuario != null) {
-          let correctpass = bcrypt.compareSync(password, usuario.password);
-          if (correctpass) {
-            req.session.user = {
-              id: usuario.id,
-              nombre: usuario.nombre,
-              email: usuario.email,
-            };
-            if (rememberMe === "on") {
-              res.cookie(
-                "rememberUser",
-                {
-                  id: usuario.id,
-                  nombre: usuario.nombre,
-                  email: usuario.email,
-                },
-                {
-                  maxAge: 1000 * 15,
     db.Users.findOne({
       where: {
         email: email,
@@ -174,19 +141,7 @@ const LoginController = {
                   maxAge: 1000 * 15,
                 }
               );
-              );
             }
-            return res.redirect("/users/profile");
-          }
-        }
-        return res.redirect("/users/register");
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  },
-};
-
             return res.redirect("/users/profile");
           }
         }
