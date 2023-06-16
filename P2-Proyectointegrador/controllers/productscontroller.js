@@ -2,7 +2,7 @@
 // let productoslista= objliteral.productos
 // let comentarioslista= objliteral.comentarios
 let db = require ("../database/models")
-const comentario = require("../database/models/comentario")
+// const comentario = require("../database/models/comentario")
 // const comentario = require("../database/models/comentario")
 let Op = db.Sequelize.Op
 
@@ -75,10 +75,10 @@ const productoscontroller={
             where:{
                 [Op.or]:[
                 {nombre:{
-                    [Op.like]:`%{busqueda}%`
+                    [Op.like]:`%${busqueda}%`
                 }}, 
                 {descripcion:{
-                    [Op.like]:`%{busqueda}%`
+                    [Op.like]:`%${busqueda}%`
                 }}, 
                 
             ]},
@@ -86,19 +86,20 @@ const productoscontroller={
                     ["created_at", "DESC"], 
                 ],
             include:  {association:"productsconusers"},
-            raw:true,
+            
         } )
         .then(function(data){
 
             let hayresultados
-            if (data.length > 0){
-                hayresultados=true
+            if (data.length == 0){
+                hayresultados = false
             } else{
-                hayresultados=false
+                hayresultados = true
             }
+
             res.render("search-results",{
                 // userlogueado:false,
-                search: busqueda,
+                busqueda: busqueda,
                 resultados: data,
                 hayresultados: hayresultados
         }) 

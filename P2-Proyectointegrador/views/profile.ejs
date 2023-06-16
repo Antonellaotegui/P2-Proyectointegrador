@@ -20,7 +20,7 @@
             </form>
             <div>
                 <ul class="">
-                    <li> Productos: <%= usuarioinfo.userconproductos.length %></li>
+                    <li> Productos: <%= user.userconproductos.length %></li>
                     <li>200 seguidores</li>
                     <li>300 comentarios</li>
                 </ul>
@@ -36,16 +36,16 @@
             <h2 class="products-title">Mis productos</h2>
         </div> 
         <!-- Show mis productos -->
-         <% for(let i = 0; i<usuarioinfo.userconproductos.length ; i++){ %> 
+         <% for(let i = 0; i<user.userconproductos.length ; i++){ %> 
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
-                    <a href="/products/detalle/<%=usuarioinfo.userconproductos[i].id%>">
+                    <a href="/products/detalle/<%=user.userconproductos[i].id%>">
                         <figure class="product-box_image">
-                            <img src="<%=usuarioinfo.userconproductos[i].imagen%>" alt="imagen <%=usuarioinfo.userconproductos[i].nombre%>">
+                            <img src="<%=user.userconproductos[i].imagen%>" alt="imagen <%=user.userconproductos[i].nombre%>">
                         </figure>
                         <article class="product-box_data">
-                            <h2><%= usuarioinfo.userconproductos[i].nombre %></h2>
-                            <p><%= usuarioinfo.userconproductos[i].descripcion%></p>
+                            <h2><%= user.userconproductos[i].nombre %></h2>
+                            <p><%= user.userconproductos[i].descripcion%></p>
                             <p>Comentarios: <% %></p>
                         </article>
                     </a>

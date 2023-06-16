@@ -10,14 +10,13 @@
     <div class="d-flex align-items-center">
         <h2 class="products-title"><% producto.nombre %></h2>
         <p class="product-detail-description">
-            <% if (isLogged) {%>
-                <a href="/products/productadd">Agregar producto</a>
+            
     
                 <% if (logeadoproducto) {%>
                     <a href="/products/edit_product">Editar producto</a>
                 
                     <%}%>
-                <%}%> 
+            
             
         </p>
     </div>
@@ -30,12 +29,12 @@
             </article>
             <div class="col-12 col-lg-4"> 
                 <section class="comments">
-                    <%for(let i = 0; i < comentario.length; i++){%>
+                    <%for(let i = 0; i < producto.productsconcomentarios.length; i++){%>
                     <article>
                         <img src="https://via.placeholder.com/35" alt="">
                         <div class="data">
                             <p class="user">
-                        <strong> <a href='/users/profile/<%= comentario[i].users_id%>' > "<%= comentario[i].comentsconusers.nombre%>" </a> </strong>
+                        <strong> <a href='/users/profile/<%= producto.productsconcomentarios[i].users_id%>' > "<%= producto.productsconcomentarios[i].comentsconusers.nombre%>" </a> </strong>
                             <%= comentario[i].comentario %> </p>
                         </div>
                     </article>

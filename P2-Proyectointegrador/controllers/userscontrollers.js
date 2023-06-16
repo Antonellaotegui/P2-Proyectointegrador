@@ -29,25 +29,58 @@ const LoginController = {
         })
         
     },
-    
+    // profile: function(req, res) {
+    //     let idPerfil
+    //     let perfil_logueado
+    //     if(req.params.id){
+    //       idPerfil = req.params.id
+    //       perfil_logueado = false
+    //     } else {
+    //       idPerfil = req.session.user.id
+    //       perfil_logueado = true
+  
+    //     }
+    //     //let idLogueado = req.session.user.id
+    //     db.usuarios.findByPk(idPerfil, {
+    //       order: [["usuarios_productos",'createdAt', 'DESC']],
+    //       include: [{association:"usuarios_productos"}, {association:"usuarios_comentarios"}]
+    //     })
+    //     .then(function(data){
+    //       res.render('profile',{
+    //           usuario : data,
+    //           perfil_logueado
+    //       })
+    //       })
+    //       .catch(function(error){
+    //         console.log(error)
+    //       })
+    //     },
+
     profile: function (req, res){
-        let id=req.session.user.id
-        db.Users.findByPk(id, {
+        let idcomentario
+        let userlog
+        if(req.params.id){
+            idcomentario = req.params.id
+            userlog = false
+        } else {
+            idcomentario = req.session.user.id
+            userlog = true
+        } 
+        // let idLog = req.session.user.id
+
+        db.Users.findByPk(idcomentario, {
+            include: [
+                {association:"userconproductos"}, 
+                {association:"userconcomentarios"}],
             nest:true,
-            include:
-                {
-                    association: "userconproductos"
-                    
-                    
-                }
-        
+            order: [["userconproductos",'createdAt', 'DESC']],
+
         }) 
-        .then(function(usuario){
-          res.render('profile',{
-            usuarioinfo:usuario
-            // userlogueado:true,
-            // usuario:usuario
-            })  
+        .then(function(data){
+            res.render('profile',{
+                user: data,
+                userlog
+            })
         })
         .catch(function(err){
             console.log(err)
