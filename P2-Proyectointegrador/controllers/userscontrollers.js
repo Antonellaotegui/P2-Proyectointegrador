@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const LoginController = {
   login: function (req, res) {
     res.render("login", {
-      userlogueado: false,
+      userlogueado: false, 
     });
   },
   register: function (req, res) {
