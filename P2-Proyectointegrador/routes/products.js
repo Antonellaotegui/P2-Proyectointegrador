@@ -9,7 +9,7 @@ router.get("/searchResults", productscontroller.searchresults)
 router.get ("/edit_product", productscontroller.editproduct)
 router.post ("/edit_product", productscontroller.update)
 router.post("/deleteproduct/:id",productscontroller.delete )
-router.post('/detalle/:id', productscontroller.createcomment)
-
+// router.post('/detalle/:id', productscontroller.createcomment)
+router.post("/addcomment/:id", productscontroller.createcomment)
 
 module.exports = router;

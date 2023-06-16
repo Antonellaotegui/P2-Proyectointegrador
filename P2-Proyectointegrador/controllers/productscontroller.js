@@ -2,6 +2,7 @@
 // let productoslista= objliteral.productos
 // let comentarioslista= objliteral.comentarios
 let db = require ("../database/models")
+// const comentario = require("../database/models/comentario")
 let Op = db.Sequelize.Op
 
 const productoscontroller={
@@ -26,7 +27,7 @@ const productoscontroller={
                 logeadoproducto= false
             }
             res.render("productos", {
-                comments:data.productsconcomentarios,
+                comentario:data.productsconcomentarios,
                 producto:data,
                 logeadoproducto
                 
@@ -178,19 +179,27 @@ const productoscontroller={
         },
         createcomment: function(req,res){
             let users_id=req.session.user.id
-            let product_id=req.params.id
-            let {comment}= req.body
+            let producto_id=req.params.id
+            let comentario= req.body.comentario
             db.Comentarios.create({
-                comment:comment,
+                comentario:comentario,
                 users_id:users_id,
-                product_id:product_id
+                producto_id:producto_id
             })
             .then(function(data){
-                res.redirect("/products/detalle" + product_id)
+                res.redirect(`/products/detalle/`+ producto_id)
             })
             .catch(function(err){
                 console.log(err)
             })
+           
+
+            // .then(function(data){
+            //     res.redirect("/products/detalle" + product_id)
+            // })
+            // .catch(function(err){
+            //     console.log(err)
+            // })
         }
     // delete: function(req,res){
     //     res.send(req.params)

@@ -28,8 +28,20 @@
                 <p class="product-detail-description">
                     <p><%= producto.descripcion %></p></p>
             </article>
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4"> 
                 <section class="comments">
+                    <%for(let i = 0; i < comentario.length; i++){%>
+                    <article>
+                        <img src="https://via.placeholder.com/35" alt="">
+                        <div class="data">
+                            <p class="user">
+                        <strong> <a href='/users/profile/<%= comentario[i].users_id%>' > <"%= comentario[i].comentsconusers.nombre%> </a> </strong>
+                            <%= comentario[i].comentario %> </p>
+                        </div>
+                    </article>
+                    <%}%>
+                </section> 
+
             <!-- <#% for(let i=0; i<comentarioslista.length; i++){ %>
                     <article>
                         <img src="<#%= comentarioslista[i].imagendeperfil %>" alt="imagendeperfil">
@@ -82,14 +94,14 @@
 
                 <% if (isLogged) {%>
                 
-                <form class="form" action= "/products/add-comment<%= producto.id %> "method = "POST">
+                <form class="form" action= "/products/addcomment/<%= producto.id %> "method = "POST">
                     <input class="form-input" type="text" value="" name = "comentario" placeholder="Agregar comentario">
                     <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                 </form>
 
                 <%} else { %>
                 <form class="form" action= "/users/login"method = "get">
-                    <input class="form-input" type="text" value="" placeholder="Agregar comentario">
+                    <input name="comentario" class="form-input" type="text" value="" placeholder="Agregar comentario">
                     <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                 </form>
                 <%} %>
