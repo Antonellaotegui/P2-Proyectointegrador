@@ -2,6 +2,7 @@
 // let productoslista= objliteral.productos
 // let comentarioslista= objliteral.comentarios
 let db = require ("../database/models")
+const comentario = require("../database/models/comentario")
 // const comentario = require("../database/models/comentario")
 let Op = db.Sequelize.Op
 
@@ -10,10 +11,12 @@ const productoscontroller={
         let indice=req.params.id
         db.Productos.findByPk(indice, {
             include: [
-                {association:"productsconcomentarios",
-                association: "productsconusers"}
+                    {association: 'productsconcomentarios',
+                    include: [{association: 'comentsconusers'}]
+                },
+                {association: "productsconusers"},
             ],
-            // order: [["productsconcomentarios","id","DESC"]]
+            order: [["productsconcomentarios","id","DESC"]]
         })
         .then(function(data){
             let logeadoproducto
@@ -29,9 +32,10 @@ const productoscontroller={
             res.render("productos", {
                 comentario:data.productsconcomentarios,
                 producto:data,
-                logeadoproducto
+                logeadoproducto,
                 
             })
+            
         })
         .catch(function(err){
             console.log(err)

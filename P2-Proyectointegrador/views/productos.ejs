@@ -1,5 +1,9 @@
-<%-include("./partials/head.ejs") %> 
-<%-include("./partials/header.ejs") %>
+<%-include("./partials/head.ejs") %>
+<% if (isLogged){ %>
+  <%-include("./partials/headerLogueado.ejs") %>
+<% } else {  %>
+  <%-include("./partials/header.ejs") %>
+<% } %>
 
 <!-- product detail -->
 <div class="container products-wrapper">
@@ -12,12 +16,8 @@
                 <% if (logeadoproducto) {%>
                     <a href="/products/edit_product">Editar producto</a>
                 
-                    <%} else { %>
-                
-                    <%} %>
-                <%} else { %>
-            
-                <%} %>
+                    <%}%>
+                <%}%> 
             
         </p>
     </div>
@@ -35,7 +35,7 @@
                         <img src="https://via.placeholder.com/35" alt="">
                         <div class="data">
                             <p class="user">
-                        <strong> <a href='/users/profile/<%= comentario[i].users_id%>' > <"%= comentario[i].comentsconusers.nombre%> </a> </strong>
+                        <strong> <a href='/users/profile/<%= comentario[i].users_id%>' > "<%= comentario[i].comentsconusers.nombre%>" </a> </strong>
                             <%= comentario[i].comentario %> </p>
                         </div>
                     </article>
