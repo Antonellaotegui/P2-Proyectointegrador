@@ -26,25 +26,37 @@ const LoginController = {
         console.log(err);
       });
   },
-  profile: function (req, res) {
-    let id = req.session.user.id;
-    db.Users.findByPk(id, {
-      nest: true,
-      include: {
-        association: "userconproductos",
-      },
+  profile: function (req, res){
+    let idcomentario
+    let userlog
+    if(req.params.id){
+        idcomentario = req.params.id
+        userlog = false
+    } else {
+        idcomentario = req.session.user.id
+        userlog = true
+    } 
+    // let idLog = req.session.user.id
+
+    db.Users.findByPk(idcomentario, {
+        include: [
+            {association:"userconproductos"}, 
+            {association:"userconcomentarios"}],
+        nest:true,
+        order: [["userconproductos",'createdAt', 'DESC']],
+
+    }) 
+    .then(function(data){
+        res.render('profile',{
+            usuario: data,
+            userlog
+        })
     })
-      .then(function (usuario) {
-        res.render("profile", {
-          usuarioinfo: usuario,
-          userlogueado: true,
-          usuario: usuario,
-        });
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  },
+    .catch(function(err){
+        console.log(err)
+    })
+    
+},
   create: function (req, res) {
     let nombre = req.body.nombre;
     let email = req.body.email;
