@@ -1,9 +1,4 @@
-// const objliteral= require("../db/index")
-// let productoslista= objliteral.productos
-// let comentarioslista= objliteral.comentarios
 let db = require ("../database/models")
-// const comentario = require("../database/models/comentario")
-// const comentario = require("../database/models/comentario")
 let Op = db.Sequelize.Op
 
 const productoscontroller={
@@ -48,25 +43,11 @@ const productoscontroller={
             // productoslista:productoslista,
             // userlogueado:false
         } )
-    //         for(let i = 0; i< productoslista.length; i++){
-    //             if (productoslista[i].id == indice){
-    //                 res.render("productos",{
-    //                     detalleProducto: productoslista[i],
-    //                     detalleComentarios: comentarioslista[i],
-    //                     comentarioslista:comentarioslista,
-    //                     productoslista:productoslista,
-    //                     userlogueado:false
-    //                 })
-    //                 }
 
-    // }
     
     },
     productsadd: function (req, res) {
         res.render('product-add',{
-            // productoslista: productoslista,
-            // comentarioslista:comentarioslista,
-            // userlogueado:true
         })
     },
 
@@ -144,28 +125,13 @@ const productoscontroller={
             console.log(err)
         })
     },
-        delete: function(req,res){
-        let id= req.params.id
-        db.Productos.destroy({
-            where:{
-                id:id
-            }
-        })
-        .then(function(res){
-            res.redirect("/")
-        })
-        .catch(function(err){
-            console.log(err)
-        })
-    },
     update: function (req,res){
-        let id = req.params.id
-        let {nombre, descripcion, imagen, created_at }= req.body
+        id= req.body.id
+        console.log(id)
         db.Productos.update({
-            imagen:imagen,
-            nombre:nombre,
-            descripcion:descripcion,
-            created_at:created_at
+            imagen: req.body.imagen,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
         }, 
             {
             where:{
@@ -194,30 +160,19 @@ const productoscontroller={
             .catch(function(err){
                 console.log(err)
             })
-           
-
-            // .then(function(data){
-            //     res.redirect("/products/detalle" + product_id)
-            // })
-            // .catch(function(err){
-            //     console.log(err)
-            // })
+        },
+        delete: function(req, res){
+            let {id} = req.body
+            db.Productos.destroy({
+                where: {id:id}
+            })
+            .then(function(resp){
+                    res.redirect('/users/profile')
+                    })
+                .catch(function(err){
+                    console.log(err)
+                    })
         }
-    // delete: function(req,res){
-    //     res.send(req.params)
-    //     let id= req.params.id
-    //     db.Productos.destroy({
-    //         where:{
-    //             id:id
-    //         }
-    //     })
-    //     .then(function(resp){
-    //         res.redirect("/")
-    //     })
-    //     .catch(function(err){
-    //         console.log(err)
-    //     })
-    // },
 
         
     }

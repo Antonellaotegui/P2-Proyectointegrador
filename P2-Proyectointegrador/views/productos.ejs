@@ -12,9 +12,17 @@
         <p class="product-detail-description">
             
             <% if (logeadoproducto) {%>
-                <a href="/products/edit_product/<%= producto.id %>"><strong>Editar</strong></a> |
-                <a href="/products/deleteproduct/<%= producto.id %>"><strong>Borrar</strong></a>
+                <a href="/products/edit_product/<%= producto.id %>"><strong> Editar </strong></a> |
+                <!-- <a href="/products/delete/<#%= producto.id %>"> Borrar</a> -->
             <%} %>
+            <% if (logeadoproducto) {%>
+                <form action="/products/delete" method="POST"> 
+                    <input type="text" name="id" value="" hidden/>
+                    <button class="logout" type="submit">
+                        <p class="borrar"> Borrar </p> 
+                    </button>
+                </form>
+            <%} %>          
         </p>
         
             
@@ -87,9 +95,6 @@
                     </article> -->
 
                 </section>
-                <p>
-                    <a href="products/deleteproduct/:id"></a>
-                </p>
 
                 <% if (isLogged) {%>
                 

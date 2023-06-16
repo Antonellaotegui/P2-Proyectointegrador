@@ -27,18 +27,17 @@ app.use (session({
   saveUninitialized: false
 }))
 
-app.use (function(req,res,next){
-  if(req.session.user != undefined){
+app.use(function(req,res,next){
+  console.log('Esta es la cookie desde app')
+  console.log(req.cookies)
+  if(req.session.user !== undefined){ 
     res.locals.isLogged = true
-    res.locals.user=req.session.user
-    
-  }else{
+    res.locals.user = req.session.user
+  } else{
     res.locals.isLogged = false
-    
   }
-    return next()
+  return next()
 })
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/products", productsRouter);
