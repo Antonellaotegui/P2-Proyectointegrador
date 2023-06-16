@@ -1,15 +1,19 @@
 <%-include("./partials/head.ejs") %>
-<%-include("./partials/headerLogueado.ejs") %>
+<% if (isLogged){ %>
+  <%-include("./partials/headerLogueado.ejs") %>
+<% } else {  %>
+  <%-include("./partials/header.ejs") %>
+<% } %>
 
 <!-- Datos del usuario -->
 <section class="info-usuario container products-wrapper">
     <div class="row">
         <div class="img-container offset-3 col-2">
-            <img src="<%=user.foto_de_perfil %>" alt="foto de perfil" class="foto-perfil">
+            <img src="<%=usuario.foto_de_perfil %>" alt="foto de perfil" class="foto-perfil">
         </div>
         <div class="data-container col-6">
             <div class="d-flex align-items-center ">
-                <h1 class="main-title"> <%= user.nombre %>
+                <h1 class="main-title"> <%= usuario.nombre %>
                     <a href="/users/profile-edit">
                         <i class="fas fa-cog">Editar Perfil</i>
                     </a>
@@ -20,9 +24,9 @@
             </form>
             <div>
                 <ul class="">
-                    <li> Productos: <%= user.userconproductos.length %></li>
+                    <li> Productos: <%= usuario.userconproductos.length %></li>
                     <li>200 seguidores</li>
-                    <li>300 comentarios</li>
+                    <li><%= usuario.userconcomentarios.length %></li>
                 </ul>
             </div>
         </div>
@@ -36,17 +40,16 @@
             <h2 class="products-title">Mis productos</h2>
         </div> 
         <!-- Show mis productos -->
-         <% for(let i = 0; i<user.userconproductos.length ; i++){ %> 
+         <% for(let i = 0; i<usuario.userconproductos.length ; i++){ %> 
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
-                    <a href="/products/detalle/<%=user.userconproductos[i].id%>">
+                    <a href="/products/detalle/<%=usuario.userconproductos[i].id%>">
                         <figure class="product-box_image">
-                            <img src="<%=user.userconproductos[i].imagen%>" alt="imagen <%=user.userconproductos[i].nombre%>">
+                            <img src="<%=usuario.userconproductos[i].imagen%>" alt="imagen <%=usuario.userconproductos[i].nombre%>">
                         </figure>
                         <article class="product-box_data">
-                            <h2><%= user.userconproductos[i].nombre %></h2>
-                            <p><%= user.userconproductos[i].descripcion%></p>
-                            <p>Comentarios: <% %></p>
+                            <h2><%= usuario.userconproductos[i].nombre %></h2>
+                            <p><%= usuario.userconproductos[i].descripcion%></p>
                         </article>
                     </a>
                 </section>
