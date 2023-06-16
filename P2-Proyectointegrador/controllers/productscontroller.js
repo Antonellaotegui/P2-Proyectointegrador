@@ -124,7 +124,7 @@ const productoscontroller={
         let nombre= req.body.nombre
         let descripcion= req.body.descripcion
         let imagen= req.body.imagen
-        
+        res.send(nombre)
         db.Productos.create(
             {
             users_id:id,
