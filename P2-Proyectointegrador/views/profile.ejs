@@ -30,29 +30,29 @@
 </section>
 <!-- /Datos del usuario -->
 
-<!-- <div class="container products-wrapper">
+<div class="container products-wrapper">
     <div class="row">
         <div class="col-12">
             <h2 class="products-title">Mis productos</h2>
-        </div> -->
+        </div> 
         <!-- Show mis productos -->
-        <!-- <#% for(let i = 0; i<dataUser.productsconusers.length ; i++){ %> 
+         <% for(let i = 0; i<usuarioinfo.userconproductos.length ; i++){ %> 
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
-                    <a href="/productos/detalle/<%#=dataUser.productsconusers[i].id%>">
+                    <a href="/productos/detalle/<%=usuarioinfo.userconproductos[i].id%>">
                         <figure class="product-box_image">
-                            <img src="<%#=dataUser.productsconusers[i].imagen%>" alt="imagen <%#=dataUser.productsconusers[i].nombre%>">
+                            <img src="<%=usuarioinfo.userconproductos[i].imagen%>" alt="imagen <%=usuarioinfo.userconproductos[i].nombre%>">
                         </figure>
                         <article class="product-box_data">
-                            <h2><%#= dataUser.productsconusers[i].nombre %></h2>
-                            <p><%#= dataUser.productsconusers[i].descripcion%></p>
-                            <p>Comentarios: <%# %></p>
+                            <h2><%= usuarioinfo.userconproductos[i].nombre %></h2>
+                            <p><%= usuarioinfo.userconproductos[i].descripcion%></p>
+                            <p>Comentarios: <% %></p>
                         </article>
                     </a>
                 </section>
             </div>
-        <#% } %>
+        <% } %>
     </div>
-</div> -->
+</div>
 
 <%-include("./partials/footer.ejs") %>
