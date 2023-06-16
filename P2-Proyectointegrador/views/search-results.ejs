@@ -35,12 +35,12 @@
         <!-- Show the "ultimos" products
             <#% for(let i=0; i< resultados.length; i++){ %>
             <article class="col-12 col-lg-8 product-detail-info">
-                <img src= "<%= productoslista[i].imagen %>" alt="imagen">
+                <img src= "<#%= productoslista[i].imagen %>" alt="imagen">
                 <p><#%= productoslista[i].nombre %></p>
                 <p class="product-detail-description">
                     <p><#%= productoslista[i].descripcion %></p></p>
             </article>
-            <% } %>
+            <#% } %>
             <div class="col-12 col-lg-4">
                 <section class="comments">
             <#% for(let i=0; i<comentarioslista.length; i++){ %>

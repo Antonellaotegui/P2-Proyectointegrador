@@ -1,8 +1,8 @@
-//const db= require("../database/models/index")
-const bcrypt= require("bcryptjs")
-const db= require("../database/models")
-const { comentarios } = require("../db")
+const db= require("../database/models/index")
 const Op= db.sequelize.Op
+const bcrypt= require("bcryptjs")
+// const { comentarios } = require("../db")
+
 
 const LoginController = {
     login: function (req, res) {
@@ -16,7 +16,7 @@ const LoginController = {
         })
     },
     profileEdit: function (req,res){
-        id= req.session.user.id
+       let  id= req.session.user.id
         db.Users.findByPK(id)
         .then(function(usuario){
             res.render("profile-edit", {
@@ -37,7 +37,7 @@ const LoginController = {
             include:
                 {
                     association: "userconproductos"
-                  
+                    
                     
                 }
         

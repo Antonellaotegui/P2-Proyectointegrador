@@ -121,17 +121,13 @@ const productoscontroller={
 
     },
     crear: function (req, res){
-        let id= req.session.user.id
-        let nombre= req.body.nombre
-        let descripcion= req.body.descripcion
-        let imagen= req.body.imagen
-        
         db.Productos.create(
             {
-            users_id:id,
-            nombre: nombre,
-            descripcion: descripcion,
-            imagen:imagen,
+            imagen: req.body.imagen,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            users_id: req.session.user.id
+            
             }
         )
         .then(function(data){
