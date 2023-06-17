@@ -27,36 +27,34 @@ const LoginController = {
       });
   },
   profile: function (req, res){
-    let idcomentario
-    let userlog
+    let idcomentario;
+    let userlog;
     if(req.params.id){
-        idcomentario = req.params.id
-        userlog = false
+        idcomentario = req.params.id;
+        userlog = false;
     } else {
-        idcomentario = req.session.user.id
-        userlog = true
+        idcomentario = req.session.user.id;
+        userlog = true;
     } 
-    // let idLog = req.session.user.id
 
     db.Users.findByPk(idcomentario, {
         include: [
-            {association:"userconproductos"}, 
-            {association:"userconcomentarios"}],
-        nest:true,
-        order: [["userconproductos",'createdAt', 'DESC']],
-
+            {association: "userconproductos"}, 
+            {association: "userconcomentarios"}
+        ],
+        nest: true,
+        order: [["userconproductos", "createdAt", "DESC"]],
     }) 
     .then(function(data){
-        res.render('profile',{
+        res.render('profile', {
             usuario: data,
-            userlog
-        })
+            userlog: userlog
+        });
     })
     .catch(function(err){
-        console.log(err)
-    })
-    
-},
+        console.log(err);
+    });
+  },
   create: function (req, res) {
     let nombre = req.body.nombre;
     let email = req.body.email;
@@ -65,20 +63,14 @@ const LoginController = {
     let dni = req.body.dni;
     let fecha_de_nacimiento = req.body.fecha_de_nacimiento;
 
-    if (email == "") {
-      let errors = {};
-      errors.message = "Debes ingresar un email";
-      res.locals.errors = errors;
+    if (email === "") {
+      req.session.errors = { message: "Debes ingresar un email" };
       return res.render("registros");
-    } else if (password == "") {
-      let errors = {};
-      errors.message = "Debes ingresar una contraseña";
-      res.locals.errors = errors;
+    } else if (password === "") {
+      req.session.errors = { message: "Debes ingresar una contraseña" };
       return res.render("registros");
     } else if (password.length < 3) {
-      let errors = {};
-      errors.message = "La contraseña debe tener más de tres dígitos";
-      res.locals.errors = errors;
+      req.session.errors = { message: "La contraseña debe tener más de tres dígitos" };
       return res.render("registros");
     }
 
@@ -89,9 +81,7 @@ const LoginController = {
     })
       .then(function (repetido) {
         if (repetido != undefined) {
-          let errors = {};
-          errors.message = "Ya existe un usuario con este email";
-          res.locals.errors = errors;
+          req.session.errors = { message: "Ya existe un usuario con este email" };
           return res.render("registros");
         } else {
           let passencriptada = bcrypt.hashSync(password, 12);
@@ -110,9 +100,7 @@ const LoginController = {
             .catch(function (err) {
               console.log(err);
               if (err.name === "SequelizeUniqueConstraintError") {
-                let errors = {};
-                errors.message = "Este correo ya está ocupado por otro usuario";
-                res.locals.errors = errors;
+                req.session.errors = { message: "Este correo ya está ocupado por otro usuario" };
                 return res.render("registros");
               }
             });
@@ -126,6 +114,16 @@ const LoginController = {
     let email = req.body.email;
     let password = req.body.password;
     let rememberMe = req.body.rememberMe;
+
+    if (email === '') {
+      req.session.errors = { message: 'Debes ingresar un email' };
+      return res.redirect('/users/login');
+    }
+
+    if (password === '') {
+      req.session.errors = { message: 'Debes ingresar una contraseña' };
+      return res.redirect('/users/login');
+    }
 
     db.Users.findOne({
       where: {
@@ -141,9 +139,9 @@ const LoginController = {
               nombre: usuario.nombre,
               email: usuario.email,
             };
-            if (rememberMe === "on") {
+            if (rememberMe === 'on') {
               res.cookie(
-                "rememberUser",
+                'rememberUser',
                 {
                   id: usuario.id,
                   nombre: usuario.nombre,
@@ -154,16 +152,20 @@ const LoginController = {
                 }
               );
             }
-            return res.redirect("/users/profile");
+            return res.redirect('/users/profile');
+          } else {
+            req.session.errors = { message: 'Contraseña incorrecta' };
+            return res.redirect('/users/login');
           }
+        } else {
+          req.session.errors = { message: 'No existe un usuario con este email' };
+          return res.redirect('/users/registro');
         }
-        return res.redirect("/users/register");
       })
       .catch(function (err) {
         console.log(err);
       });
   },
 };
-
 
 module.exports = LoginController;

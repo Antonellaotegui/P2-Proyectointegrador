@@ -16,4 +16,3 @@ router.get ("/profile-edit", userscontrollers.profileEdit)
 router.post ("/profile-edit", userscontrollers.chequeo)
 
 module.exports = router;
-
