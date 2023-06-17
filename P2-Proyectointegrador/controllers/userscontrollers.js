@@ -63,14 +63,20 @@ const LoginController = {
     let dni = req.body.dni;
     let fecha_de_nacimiento = req.body.fecha_de_nacimiento;
 
-    if (email === "") {
-      req.session.errors = { message: "Debes ingresar un email" };
+    if (email == "") {
+      let errors = {};
+      errors.message = "Debes ingresar un email";
+      res.locals.errors = errors;
       return res.render("registros");
-    } else if (password === "") {
-      req.session.errors = { message: "Debes ingresar una contraseña" };
+    } else if (password == "") {
+      let errors = {};
+      errors.message = "Debes ingresar una contraseña";
+      res.locals.errors = errors;
       return res.render("registros");
     } else if (password.length < 3) {
-      req.session.errors = { message: "La contraseña debe tener más de tres dígitos" };
+      let errors = {};
+      errors.message = "La contraseña debe tener más de tres dígitos";
+      res.locals.errors = errors;
       return res.render("registros");
     }
 
@@ -81,7 +87,9 @@ const LoginController = {
     })
       .then(function (repetido) {
         if (repetido != undefined) {
-          req.session.errors = { message: "Ya existe un usuario con este email" };
+          let errors = {};
+          errors.message = "Ya existe un usuario con este email";
+          res.locals.errors = errors;
           return res.render("registros");
         } else {
           let passencriptada = bcrypt.hashSync(password, 12);
@@ -100,7 +108,9 @@ const LoginController = {
             .catch(function (err) {
               console.log(err);
               if (err.name === "SequelizeUniqueConstraintError") {
-                req.session.errors = { message: "Este correo ya está ocupado por otro usuario" };
+                let errors = {};
+                errors.message = "Este correo ya está ocupado por otro usuario";
+                res.locals.errors = errors;
                 return res.render("registros");
               }
             });
