@@ -27,16 +27,16 @@ const LoginController = {
       });
   },
   profile: function (req, res){
-    let idcomentario;
-    let userlog;
-    if(req.params.id){
-        idcomentario = req.params.id;
-        userlog = false;
-    } else {
-        idcomentario = req.session.user.id;
-        userlog = true;
-    } 
-
+    // let idcomentario;
+    // let userlog;
+    // if(req.params.id){
+    //     idcomentario = req.params.id;
+    //     userlog = false;
+    // } else {
+    //     idcomentario = req.session.user.id;
+    //     userlog = true;
+    // } 
+    let idcomentario = req.session.user.id;
     db.Users.findByPk(idcomentario, {
         include: [
             {association: "userconproductos"}, 
@@ -107,12 +107,12 @@ const LoginController = {
             })
             .catch(function (err) {
               console.log(err);
-              if (err.name === "SequelizeUniqueConstraintError") {
-                let errors = {};
-                errors.message = "Este correo ya está ocupado por otro usuario";
-                res.locals.errors = errors;
-                return res.render("registros");
-              }
+              // if (err.name === "SequelizeUniqueConstraintError") {
+              //   let errors = {};
+              //   errors.message = "Este correo ya está ocupado por otro usuario";
+              //   res.locals.errors = errors;
+              //   return res.render("registros");
+              // }
             });
         }
       })
@@ -126,12 +126,16 @@ const LoginController = {
     let rememberMe = req.body.rememberMe;
 
     if (email === '') {
-      req.session.errors = { message: 'Debes ingresar un email' };
+      let errors = {}
+      errors.message = 'Debes ingresar un email' ;
+      res.locals.errors = errors;
       return res.redirect('/users/login');
     }
 
     if (password === '') {
-      req.session.errors = { message: 'Debes ingresar una contraseña' };
+      let errors = {}
+      errors.message = 'Debes ingresar una contraseña' ;
+      res.locals.errors = errors;
       return res.redirect('/users/login');
     }
 
@@ -164,11 +168,15 @@ const LoginController = {
             }
             return res.redirect('/users/profile');
           } else {
-            req.session.errors = { message: 'Contraseña incorrecta' };
+            let errors = {}
+            errors.message = 'Contraseña incorrecta';
+            res.locals.message = errors;
             return res.redirect('/users/login');
           }
         } else {
-          req.session.errors = { message: 'No existe un usuario con este email' };
+          let errors = {}
+          errors.message = 'No existe un usuario con este email' ;
+          res.locals.errors = errors;
           return res.redirect('/users/registro');
         }
       })

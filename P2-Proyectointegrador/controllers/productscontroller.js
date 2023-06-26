@@ -126,7 +126,7 @@ const productoscontroller={
         })
     },
     update: function (req,res){
-        id= req.body.id
+        let id= req.body.id
         console.log(id)
         db.Productos.update({
             imagen: req.body.imagen,
@@ -145,7 +145,7 @@ const productoscontroller={
             console.log(err)
         })
         },
-        createcomment: function(req,res){
+    createcomment: function(req,res){
             let users_id=req.session.user.id
             let producto_id=req.params.id
             let comentario= req.body.comentario
